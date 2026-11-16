@@ -1,32 +1,260 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Zelalem.M — Creative Studio</title>
-<meta name="description" content="An independent creative studio for graphic design, marketing and mural art.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zelalem.M</title>
+<meta name="description" content="Graphic design, marketing and mural art portfolio by Zelalem.M, Addis Ababa.">
+<meta name="theme-color" content="#f5eedc">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Newsreader:ital,opsz,wght@0,6..72,400..500;1,6..72,400&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111;--cream:#f5eedc;--orange:#f58220;--muted:#777;--line:rgba(17,17,17,.18)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.header{min-height:82px;padding:18px 5.5%;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(245,238,220,.96);z-index:10}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.04em;font-size:15px;white-space:nowrap}.brand i{color:var(--orange);font-style:normal}.brand small{display:block;font-size:8px;letter-spacing:.25em;margin-top:4px}.brand-mark{font-size:27px;line-height:1;border:2px solid var(--ink);padding:7px 8px}.brand-mark span{color:var(--orange)}nav{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}nav a{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;padding:8px 0;border-bottom:2px solid transparent}nav a.active,nav a:hover{border-color:var(--orange)}.cta,.btn{display:inline-flex;align-items:center;gap:12px;padding:14px 19px;background:var(--orange);color:#111;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em;border:0}.cta:hover,.btn:hover{transform:translateY(-2px)}.menu{display:none;background:none;border:0;font-size:25px}.hero{display:grid;grid-template-columns:1fr 1fr;min-height:610px;padding:6.5% 5.5%;gap:5%;align-items:center}.eyebrow{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}.eyebrow:before{content:'';display:inline-block;width:8px;height:8px;background:var(--orange);border-radius:50%;margin-right:10px}.hero h1,.page-head h1{font-size:clamp(55px,8vw,112px);line-height:.88;letter-spacing:-.075em;margin:28px 0}.hero h1 em,.page-head h1 em,h2 em{font-family:Georgia,serif;font-weight:400}.hero p,.page-head p{font-size:17px;line-height:1.7;max-width:470px;color:#4f4b43}.actions{display:flex;align-items:center;gap:25px;margin-top:32px}.textlink{font-size:12px;font-weight:800;text-transform:uppercase;border-bottom:1px solid;padding-bottom:6px}.hero-image{height:490px;position:relative;background:#d4c7ad;overflow:hidden}.hero-image img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%)}.stamp{position:absolute;right:7%;bottom:7%;background:var(--orange);padding:22px;font-weight:900;font-size:31px;line-height:.95;transform:rotate(-5deg)}.band{background:var(--ink);color:var(--cream);padding:30px 5.5%;display:flex;align-items:center;justify-content:space-between;gap:20px}.band strong{font-size:clamp(20px,3vw,36px);letter-spacing:-.04em}.band em{color:var(--orange);font-family:Georgia,serif;font-weight:400}.section{padding:90px 5.5%}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}.section-head h2{font-size:clamp(38px,5.5vw,70px);line-height:.95;letter-spacing:-.06em;margin:16px 0 0}.section-head p{max-width:380px;line-height:1.7;color:#5d574e}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.work img{width:100%;height:310px;object-fit:cover;display:block;background:#ddd}.work:nth-child(2){margin-top:55px}.work:nth-child(3){margin-top:110px}.work-meta{display:flex;justify-content:space-between;align-items:start;padding:15px 0;border-bottom:1px solid var(--line)}.work-meta small{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#756c60}.work-meta h3{font-size:20px;margin:8px 0}.services{background:#e8dfcc;display:grid;grid-template-columns:1fr 1fr;gap:8%;padding:80px 5.5%}.services h2{font-size:clamp(40px,5vw,68px);line-height:.95;letter-spacing:-.06em}.service-list a{display:flex;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line);font-size:20px;font-weight:700}.service-list span{color:var(--orange);font-size:12px}.cta-block{background:var(--orange);padding:85px 5.5%;text-align:center}.cta-block h2{font-size:clamp(44px,7vw,86px);letter-spacing:-.07em;line-height:.95;margin:20px 0 30px}.btn.dark{background:var(--ink);color:var(--cream)}.page-head{padding:90px 5.5% 55px;max-width:1100px}.page-head h1{font-size:clamp(54px,8vw,100px)}.page-content{padding:0 5.5% 90px}.about-row{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center}.about-row img{width:100%;height:430px;object-fit:cover}.about-row p{font-size:22px;line-height:1.6}.service-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.service-card{background:#e9e0ce;padding:30px;min-height:250px}.service-card b{color:var(--orange);font-size:12px}.service-card h3{font-size:25px}.service-card p{line-height:1.65;color:#5c554b}.contact{display:grid;grid-template-columns:1fr 1fr;gap:8%}.contact h2{font-size:52px;letter-spacing:-.06em}.contact p{line-height:1.7}.contact form{display:grid;gap:14px}.contact input,.contact textarea{width:100%;padding:15px;border:1px solid var(--line);background:transparent;font:inherit}.contact textarea{min-height:130px}.notice{font-size:13px;color:#6b4b20}.footer{background:var(--ink);color:var(--cream);padding:40px 5.5%;display:flex;justify-content:space-between;gap:25px;align-items:end}.footer p,.footer small{color:#bdb4a4}.footer-right{text-align:right;line-height:1.9;font-size:12px;color:#bdb4a4}.empty{padding:45px;background:#e9e0ce;line-height:1.7}.video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.video-grid video{width:100%;background:#111}.admin-note{padding:25px;background:#e9e0ce;line-height:1.7;max-width:700px}.admin-note code{background:#ddd2bd;padding:3px 6px}
-@media(max-width:900px){.header{flex-wrap:wrap}.menu{display:block}nav{display:none;order:3;width:100%;justify-content:flex-start}nav.open{display:flex}.header .cta{display:none}.hero{grid-template-columns:1fr;padding-top:55px}.hero-image{height:390px}.grid{grid-template-columns:repeat(2,1fr)}.work:nth-child(n){margin-top:0}.services{grid-template-columns:1fr}.service-cards{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:20px}}
-@media(max-width:580px){.header{padding:15px 5%}.hero{padding:55px 5%}.hero h1{font-size:62px}.hero-image{height:330px}.band{align-items:flex-start;flex-direction:column}.section,.page-content{padding:65px 5%}.grid,.service-cards,.contact,.about-row,.video-grid{grid-template-columns:1fr}.work img{height:260px}.page-head{padding:65px 5% 35px}.page-head h1{font-size:57px}.footer{display:block}.footer-right{text-align:left;margin-top:25px}.actions{flex-wrap:wrap}}
-.work{display:block;color:inherit}.work img{transition:transform .5s}.work:hover img{transform:scale(1.03)}.work{overflow:hidden}.work-meta{background:var(--cream)}.work:hover h3{text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:5px}.detail-head{padding:60px 5.5% 40px;display:flex;flex-direction:column;align-items:flex-start;gap:22px}.detail-head h1{font-size:clamp(46px,7vw,104px);line-height:.92;letter-spacing:-.07em;margin:0}.detail-head p{font-size:19px;line-height:1.6;max-width:620px;color:#4f4b43;margin:0}.detail-hero{padding:0 5.5%}.detail-hero img{width:100%;max-height:640px;object-fit:cover;display:block;background:#ddd}.detail-body{display:grid;grid-template-columns:1fr 1.5fr;gap:7%;padding:70px 5.5%}.detail-facts{margin:0}.detail-facts div{padding:18px 0;border-bottom:1px solid var(--line)}.detail-facts dt{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#756c60}.detail-facts dd{margin:8px 0 0;font-size:18px;font-weight:700}.detail-text h2{font-size:clamp(28px,3.4vw,44px);line-height:1.05;letter-spacing:-.04em;margin:18px 0}.detail-text p{font-size:17px;line-height:1.75;color:#4f4b43;margin:0 0 30px;max-width:560px}.detail-nav{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}.detail-nav a{padding:38px 5.5%;display:flex;flex-direction:column;gap:10px}.detail-nav a:last-child{text-align:right;border-left:1px solid var(--line)}.detail-nav a:hover{background:var(--orange)}.detail-nav small{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.detail-nav b{font-size:clamp(20px,3vw,34px);letter-spacing:-.04em}@media(max-width:900px){.detail-body{grid-template-columns:1fr;gap:40px;padding:50px 5%}.detail-head{padding:40px 5% 30px}.detail-hero{padding:0 5%}.detail-nav a{padding:28px 5%}}.vframe{position:relative;aspect-ratio:16/9;background:#111}.vframe iframe,.vframe video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#111}.video-card .work-meta{background:transparent}.video-card p{margin:0;color:#5d574e;line-height:1.6;font-size:14px}.vsec2{padding-top:20px}.vsec2 .section-head h2{font-size:clamp(34px,4vw,54px);margin:14px 0 0;letter-spacing:-.05em}.detail-video{padding:40px 5.5% 0;max-width:1100px}.hp{position:absolute!important;left:-9999px;opacity:0;height:0;width:0}.adminlink{opacity:.55}.adminlink:hover{opacity:1}.menu{color:inherit}@media(max-width:900px){.detail-video{padding:30px 5% 0}}
-</style></head>
+:root{
+  --cream:#f5eedc;--ink:#111111;--orange:#f58220;
+  --plaster:var(--cream);--bone:var(--cream);--blue:var(--orange);--blue-soft:var(--orange);
+  --muted:rgba(17,17,17,.68);--line:rgba(17,17,17,.2);--ph:rgba(17,17,17,.09);--tint:rgba(17,17,17,.06);
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,system-ui,sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --pad:clamp(20px,5vw,72px);--max:1480px;--hdr:76px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--plaster);color:var(--ink);font-family:var(--serif);font-size:19px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,video,iframe{max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 6px var(--orange)}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;margin:0;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
+.lede{font-size:clamp(20px,2vw,24px);line-height:1.55;max-width:34em;color:var(--ink);margin:0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:-.005em;line-height:1;padding:17px 26px;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:var(--bone);transition:background .2s,color .2s,transform .2s,border-color .2s}
+.btn:hover{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.btn.light{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+.btn.light:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.btn:disabled{opacity:.55;cursor:default}
+.textlink{font-family:var(--display);font-weight:600;font-size:16px;border-bottom:2px solid currentColor;padding-bottom:3px}
+.textlink:hover{border-bottom-color:var(--orange)}
+
+/* admin bar (only the signed-in admin sees it) */
+.adminbar{background:var(--orange);color:var(--ink);font-family:var(--display);font-size:14px;font-weight:500}
+.adminbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:42px;padding-block:6px}
+.adminbar a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.adminbar .acts{display:flex;gap:22px;align-items:center}
+.adminbar button{background:none;border:0;padding:0;font:inherit;text-decoration:underline;text-underline-offset:3px;color:var(--ink)}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:40;background:rgba(245,238,220,.9);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:var(--hdr)}
+.brand{display:flex;align-items:center;gap:13px;font-family:var(--display);flex:none}
+.brand-mark{width:44px;height:44px;border-radius:12px;background:var(--ink);color:var(--bone);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px;letter-spacing:-.04em}
+.brand-mark span{color:var(--orange)}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-text b{font-size:20px;font-weight:700;letter-spacing:-.03em}
+.brand-text small{font-size:12.5px;color:var(--muted);font-weight:500;margin-top:3px}
+.primary-nav{display:flex;align-items:center;gap:6px}
+.primary-nav a{position:relative;font-family:var(--display);font-weight:600;font-size:16px;padding:10px 16px;border-radius:999px;color:var(--ink);transition:background .2s,color .2s}
+.primary-nav a:hover{background:var(--tint)}
+.primary-nav a[aria-current=page]{background:var(--ink);color:var(--bone)}
+.hdr-actions{display:flex;align-items:center;gap:12px;flex:none}
+.hdr-actions .btn{padding:13px 22px;font-size:15px}
+.admin-pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:14px;padding:10px 16px;border-radius:999px;border:2px solid var(--ink);color:var(--ink);background:transparent;transition:background .2s,color .2s}
+.admin-pill i{width:9px;height:9px;border-radius:50%;background:var(--orange);display:block;box-shadow:0 0 0 2px var(--ink)}
+.admin-pill:hover{background:var(--orange)}
+.menu-btn{display:none;width:46px;height:46px;border-radius:50%;border:2px solid var(--ink);background:transparent;position:relative}
+.menu-btn span,.menu-btn span:before{content:"";position:absolute;left:12px;right:12px;height:2px;background:var(--ink);transition:transform .25s,top .25s}
+.menu-btn span{top:21px}.menu-btn span:before{left:0;right:0;top:-6px}
+.menu-btn[aria-expanded=true] span{transform:rotate(45deg)}
+.menu-btn[aria-expanded=true] span:before{top:0;transform:rotate(-90deg)}
+.sheet{display:none}
+
+/* page layout helpers */
+.sec{padding-block:clamp(64px,9vw,128px)}
+.sec.tight{padding-top:0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,52px)}
+.sec-head h2{font-size:clamp(40px,6.2vw,92px)}
+.sec-head p{margin:0;max-width:26em;color:var(--muted)}
+
+/* hero */
+.hero{padding-block:clamp(40px,6vw,88px) clamp(56px,8vw,112px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(28px,5vw,80px);align-items:end}
+.hero h1{font-size:clamp(56px,10.4vw,164px);line-height:.9;letter-spacing:-.055em;font-weight:800}
+.hero .lede{margin-top:clamp(24px,3vw,40px)}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:clamp(24px,3vw,36px)}
+.paint{position:relative;aspect-ratio:4/5;background:var(--ph);overflow:hidden;border-radius:6px}
+.paint img{width:100%;height:100%;object-fit:cover;display:block}
+.paint:after{content:"";position:absolute;inset:0;background:var(--blue);transform-origin:100% 50%;animation:roll 1.25s cubic-bezier(.77,0,.18,1) .25s both}
+@keyframes roll{to{transform:scaleX(0)}}
+
+/* statement band */
+.statement{background:var(--ink);color:var(--bone);padding-block:clamp(48px,7vw,96px)}
+.statement p{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(34px,6.4vw,100px);line-height:1;letter-spacing:-.045em;max-width:15em}
+
+/* tiles */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(32px,3.4vw,52px) clamp(16px,2vw,28px)}
+.tile{display:block;min-width:0}
+.tile-media{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--ph);border-radius:6px;display:block;width:100%;border:0;padding:0}
+.tile-media img,.tile-media video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.tile:hover .tile-media img,.tile:hover .tile-media video{transform:scale(1.04)}
+.tile-meta{padding-top:14px}
+.tile-meta h3{font-size:clamp(21px,1.9vw,27px);line-height:1.1;letter-spacing:-.02em;font-weight:650}
+.tile-meta h3 a,.tile-meta h3 button{background:linear-gradient(var(--blue),var(--blue)) 0 100%/0 2px no-repeat;transition:background-size .3s}
+.tile:hover .tile-meta h3 a,.tile:hover .tile-meta h3 button{background-size:100% 2px}
+.tile-meta p{margin:6px 0 0;color:var(--muted);font-size:16px;line-height:1.45}
+.tile-meta h3 button{border:0;background-color:transparent;padding:0;text-align:left;font:inherit;letter-spacing:inherit}
+.kind{display:inline-block;font-family:var(--display);font-size:13.5px;font-weight:600;margin-bottom:6px}
+.play{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;background:var(--bone);color:var(--ink);display:grid;place-items:center;transition:transform .25s,background .25s,color .25s;box-shadow:0 6px 30px rgba(17,17,17,.25)}
+.play svg{width:26px;height:26px;margin-left:4px}
+.tile:hover .play{transform:scale(1.1);background:var(--orange);color:var(--ink)}
+.vbadge{position:absolute;left:12px;top:12px;font-family:var(--display);font-weight:700;font-size:13px;background:var(--ink);color:var(--bone);padding:6px 11px;border-radius:999px}
+.empty{padding:40px;background:var(--tint);border-radius:6px;color:var(--muted)}
+
+/* filters */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 clamp(28px,4vw,48px)}
+.chip{font-family:var(--display);font-weight:600;font-size:16px;padding:11px 20px;border-radius:999px;border:2px solid var(--ink);background:transparent;transition:background .2s,color .2s}
+.chip:hover{background:var(--orange)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bone)}
+
+/* services */
+.svc{border-top:2px solid var(--ink)}
+.svc a,.svc div.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(16px,4vw,64px);padding-block:clamp(24px,3vw,40px);border-bottom:1px solid var(--line);align-items:baseline;transition:padding .25s,background .25s}
+.svc a:hover{padding-left:16px}
+.svc h3{font-size:clamp(32px,4.6vw,66px);letter-spacing:-.04em}
+.svc p{margin:0;color:var(--muted);max-width:30em}
+.svc a:hover h3{box-shadow:inset 0 -.16em 0 var(--orange)}
+
+/* cta */
+.cta-band{background:var(--orange);color:var(--ink);padding-block:clamp(64px,9vw,128px)}
+.cta-band h2{font-size:clamp(46px,8.6vw,136px);letter-spacing:-.055em;line-height:.92;font-weight:800;max-width:11em}
+.cta-band .btn{margin-top:clamp(28px,4vw,48px)}
+
+/* page tops */
+.page-top{padding-block:clamp(48px,7vw,104px) clamp(28px,4vw,56px)}
+.page-top h1{font-size:clamp(52px,9vw,140px);line-height:.92;letter-spacing:-.05em;font-weight:800;max-width:12em}
+.page-top .lede{margin-top:clamp(20px,2.4vw,32px);color:var(--muted)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,6vw,96px);align-items:start}
+.about-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--ph);border-radius:6px}
+.about-grid h2{font-size:clamp(34px,4.4vw,64px);margin-bottom:24px}
+.about-grid p{margin:0;max-width:32em}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,7vw,110px);align-items:start}
+.info p{margin:0 0 24px;font-size:20px}
+.info b{display:block;font-family:var(--display);font-size:15px;font-weight:600;color:var(--muted);margin-bottom:2px}
+.info a{border-bottom:2px solid var(--orange)}
+form.cform{display:grid;gap:18px}
+.fld{display:block}
+.fld span{display:block;font-family:var(--display);font-weight:600;font-size:15px;margin-bottom:8px}
+.fld input,.fld textarea{width:100%;font:inherit;font-size:19px;padding:15px 16px;background:var(--tint);border:2px solid transparent;border-bottom-color:var(--ink);border-radius:6px 6px 0 0;color:var(--ink);transition:border-color .2s,background .2s}
+.fld textarea{min-height:170px;resize:vertical}
+.fld input:focus,.fld textarea:focus{outline:none;border-color:var(--orange);border-bottom-color:var(--ink);background:var(--cream);box-shadow:0 0 0 3px var(--orange)}
+.hp{position:absolute!important;left:-9999px;height:0;width:0;opacity:0}
+.notice{margin:0;font-family:var(--display);font-weight:600;font-size:16px;min-height:1.4em}
+.notice.ok,.notice.err{color:var(--ink)}.notice.ok:before{content:'✓ '}.notice.err:before{content:'! '}
+
+/* project detail */
+.d-top{padding-block:clamp(32px,5vw,64px) clamp(24px,3vw,40px)}
+.d-top h1{font-size:clamp(46px,8.4vw,128px);line-height:.93;letter-spacing:-.05em;font-weight:800;margin:clamp(20px,3vw,36px) 0 clamp(16px,2vw,24px);max-width:13em}
+.d-top .lede{color:var(--muted)}
+.d-hero img{width:100%;max-height:78vh;object-fit:cover;display:block;background:var(--ph);border-radius:6px}
+.d-video{margin-top:clamp(20px,3vw,40px)}
+.d-body{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(28px,6vw,96px);padding-block:clamp(48px,7vw,104px)}
+.facts{margin:0}
+.facts div{padding:16px 0;border-bottom:1px solid var(--line)}
+.facts div:first-child{border-top:2px solid var(--ink)}
+.facts dt{font-family:var(--display);font-size:14px;font-weight:600;color:var(--muted)}
+.facts dd{margin:4px 0 0;font-size:20px}
+.d-text h2{font-size:clamp(28px,3.4vw,48px);line-height:1.04;margin-bottom:22px;max-width:18em}
+.d-text p{margin:0 0 32px;max-width:32em}
+.d-nav{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink)}
+.d-nav a{padding:clamp(24px,4vw,48px) var(--pad);display:flex;flex-direction:column;gap:8px;transition:background .25s,color .25s}
+.d-nav a:last-child{text-align:right;border-left:1px solid var(--line)}
+.d-nav a:hover{background:var(--ink);color:var(--bone)}
+.d-nav small{font-family:var(--display);font-size:14px;font-weight:600;opacity:.7}
+.d-nav b{font-family:var(--display);font-size:clamp(22px,3.2vw,44px);letter-spacing:-.03em;line-height:1.05}
+
+/* video frame (detail + lightbox) */
+.vframe{position:relative;aspect-ratio:16/9;background:var(--ink);border-radius:6px;overflow:hidden}
+.vframe iframe,.vframe video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:var(--ink)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(17,17,17,.94);display:none;align-items:center;justify-content:center;padding:clamp(16px,4vw,56px)}
+.lb.on{display:flex;animation:fade .2s both}
+@keyframes fade{from{opacity:0}}
+.lb-box{width:min(1180px,100%)}
+.lb-cap{color:var(--cream);font-family:var(--display);font-weight:600;font-size:20px;margin-top:14px}
+.lb-close{position:absolute;top:16px;right:16px;width:48px;height:48px;border-radius:50%;border:2px solid var(--cream);background:transparent;color:var(--cream);font-size:26px;line-height:1}
+.lb-close:hover{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+
+/* footer */
+.site-footer{background:var(--ink);color:var(--bone);padding-block:clamp(56px,8vw,104px) 32px}
+.f-big{font-family:var(--display);font-weight:800;font-size:clamp(56px,15vw,240px);line-height:.85;letter-spacing:-.06em;margin:0 0 clamp(36px,5vw,72px);overflow-wrap:anywhere}
+.f-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;border-top:1px solid rgba(245,238,220,.25);padding-top:32px;font-size:17px;line-height:1.7}
+.f-cols h4{font-family:var(--display);font-size:15px;font-weight:600;color:var(--blue-soft);margin:0 0 10px;letter-spacing:0}
+.f-cols a:hover{color:var(--blue-soft)}
+.f-cols a{display:block;width:fit-content}
+.f-base{margin-top:48px;font-family:var(--display);font-size:14px;color:rgba(245,238,220,.65)}
+
+/* responsive */
+@media(max-width:1020px){
+  .primary-nav,.hdr-actions .btn,.hdr-actions .admin-pill{display:none}
+  .menu-btn{display:block}
+  .sheet{position:fixed;inset:0;top:0;z-index:60;background:var(--plaster);padding:calc(var(--hdr) + 12px) var(--pad) 40px;overflow:auto;transform:translateY(-102%);visibility:hidden;transition:transform .45s cubic-bezier(.7,0,.2,1),visibility 0s .45s;display:flex;flex-direction:column;gap:4px}
+  .sheet.open{transform:none;visibility:visible;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+  .sheet a.nl{font-family:var(--display);font-weight:700;font-size:clamp(40px,11vw,64px);letter-spacing:-.04em;line-height:1.15;padding:6px 0;border-bottom:1px solid var(--line)}
+  .sheet a.nl[aria-current=page]{box-shadow:inset 0 -.2em 0 var(--orange)}
+  .sheet .btn{margin-top:28px;align-self:flex-start}
+  .sheet .admin-pill{margin-top:14px;align-self:flex-start}
+  .site-header{z-index:70}
+  .hero-grid{grid-template-columns:1fr}
+  .paint{aspect-ratio:4/3}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid,.contact-grid,.d-body{grid-template-columns:1fr}
+  .svc a,.svc div.row{grid-template-columns:1fr;gap:10px}
+  .f-cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  body{font-size:18px}
+  .tiles{grid-template-columns:1fr}
+  .tile-media{aspect-ratio:4/3}
+  .brand-text small{display:none}
+  .f-cols{grid-template-columns:1fr}
+  .adminbar .wrap{flex-direction:column;align-items:flex-start;gap:2px}
+  .play{width:64px;height:64px;margin:-32px 0 0 -32px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .paint:after{animation:none;transform:scaleX(0)}
+  *{transition-duration:.01ms!important}
+  .lb.on{animation:none}
+}
+#hdr{display:contents}
+
+</style>
+</head>
 <body>
-<header class="header" id="hdr"></header>
-<div id="app"></div>
-<footer class="footer" id="ftr"></footer>
+<div id="hdr"></div>
+<main id="app"></main>
+<footer class="site-footer" id="ftr"></footer>
 <noscript><p style="padding:40px;font-family:Arial">Please enable JavaScript to view this website.</p></noscript>
 <script>/* Shared by the public site and the admin dashboard: default content + helpers. */
 (function () {
   const U = 'https://images.unsplash.com/';
   window.DEFAULTS = {
     site: {
-      brandName: 'ZELALEM.M',
+      brandName: 'Zelalem.M',
       mark: 'ZM',
-      tagline: 'CREATIVE STUDIO',
+      tagline: 'Creative studio, Addis Ababa',
       eyebrow: 'Independent creative studio · Addis Ababa',
       heroLine1: 'Make it',
       heroLine2: 'matter.',
-      heroText: 'We build bold brands, thoughtful campaigns and art-filled spaces. Strategy, design and creativity — all under one roof.',
+      heroText: 'Graphic design, marketing and mural art for brands and places that want to be noticed.',
       stamp: 'MAKE\nIT\nMATTER.',
       heroImage: U + 'photo-1513364776144-60967b0f800f?w=1200',
       band1a: 'Brands', band1b: 'bold.',
@@ -58,9 +286,9 @@
       servicesPageLine2: 'for ambitious ideas.',
       servicesPageText: 'From first thought to final finish, we shape the pieces that make your brand distinct.',
       worksKicker: 'The portfolio',
-      worksLine1: 'Selected work.',
-      worksLine2: 'Real-world impact.',
-      worksText: 'A mix of identities, campaigns, visual experiments and spaces transformed through art.',
+      worksLine1: 'Selected work,',
+      worksLine2: 'on walls and screens.',
+      worksText: 'Identities, campaigns, murals and films. Pick a category to see its projects and videos together.',
       videosKicker: 'Moving image',
       videosLine1: 'Ideas in',
       videosLine2: 'motion.',
@@ -88,8 +316,8 @@
       { id: 'p6', slug: 'the-big-idea', title: 'The Big Idea', category: 'Marketing', image: U + 'photo-1497366754035-f200968a6e72?w=1000', desc: 'Strategy and creative direction for a growing brand.', summary: 'Strategy and creative direction for a growing brand.', body: 'We clarified the brand’s message, set the creative direction, and gave the team a clear plan for what to make next.', year: '2026', type: 'Strategy', services: 'Brand strategy · Creative direction · Messaging', videoUrl: '', visible: true },
     ],
     videos: [
-      { id: 'v1', title: 'Sample video — replace me', category: 'Motion', description: 'A sample clip so you can see how videos look. Replace it in the admin with your own work.', url: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4', poster: '', visible: true },
-      { id: 'v2', title: 'Sample video 2 — replace me', category: 'Motion', description: 'Paste a YouTube or Vimeo link, or upload an MP4, from the admin dashboard.', url: 'https://www.w3schools.com/html/mov_bbb.mp4', poster: '', visible: true },
+      { id: 'v1', title: 'Sample video — replace me', category: 'Mural Art', description: 'A sample clip so you can see how videos look. Replace it in the admin with your own work.', url: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4', poster: '', visible: true },
+      { id: 'v2', title: 'Sample video 2 — replace me', category: 'Marketing', description: 'Paste a YouTube or Vimeo link, or upload an MP4, from the admin dashboard.', url: 'https://www.w3schools.com/html/mov_bbb.mp4', poster: '', visible: true },
     ],
     services: [
       { id: 's1', num: '01', tag: 'DESIGN', title: 'Graphic design', text: 'Visual identities, print, digital design, art direction and brand systems.', link: '#/graphic-design', visible: true },
@@ -97,35 +325,32 @@
       { id: 's3', num: '03', tag: 'ART', title: 'Mural art', text: 'Custom murals, public art, environmental graphics and wall painting.', link: '#/mural-art', visible: true },
     ],
     // Which pages appear in the top menu.
-    nav: { about: true, services: true, works: true, graphic: true, marketing: true, mural: true, videos: true, contact: true },
+    nav: { about: true, services: true, works: true, contact: true },
   };
 
   // Fields shown in the admin "Site text" tab: [key, label, type]
   window.SCHEMA = [
     ['Brand & header', [
-      ['brandName', 'Brand name', 'text'], ['mark', 'Logo letters (2)', 'text'], ['tagline', 'Small text under name', 'text']]],
+      ['brandName', 'Brand name', 'text'], ['mark', 'Logo letters (2)', 'text'], ['tagline', 'Small text under the name', 'text']]],
     ['Home — top', [
-      ['eyebrow', 'Small line above title', 'text'], ['heroLine1', 'Title line 1', 'text'], ['heroLine2', 'Title line 2 (italic)', 'text'],
-      ['heroText', 'Intro paragraph', 'area'], ['stamp', 'Orange stamp text (one word per line)', 'area'], ['heroImage', 'Top image', 'image']]],
-    ['Home — black band', [
-      ['band1a', 'Word 1', 'text'], ['band1b', 'Word 1 (italic)', 'text'], ['band2a', 'Word 2', 'text'], ['band2b', 'Word 2 (italic)', 'text'],
-      ['band3a', 'Word 3', 'text'], ['band3b', 'Word 3 (italic)', 'text'], ['bandRight', 'Right-side text', 'text']]],
+      ['heroLine1', 'Headline, line 1', 'text'], ['heroLine2', 'Headline, line 2', 'text'],
+      ['heroText', 'Intro paragraph', 'area'], ['heroImage', 'Top image', 'image']]],
+    ['Home — statement band', [
+      ['band1a', 'Word 1', 'text'], ['band1b', 'Word 1 ending', 'text'], ['band2a', 'Word 2', 'text'], ['band2b', 'Word 2 ending', 'text'],
+      ['band3a', 'Word 3', 'text'], ['band3b', 'Word 3 ending', 'text']]],
     ['Home — sections', [
-      ['workKicker', 'Projects: small line', 'text'], ['workLine1', 'Projects: title line 1', 'text'], ['workLine2', 'Projects: title line 2', 'text'], ['workText', 'Projects: paragraph', 'area'],
-      ['servicesKicker', 'Services: small line', 'text'], ['servicesLine1', 'Services: title line 1', 'text'], ['servicesLine2', 'Services: title line 2', 'text'],
-      ['ctaKicker', 'Orange block: small line', 'text'], ['ctaLine1', 'Orange block: line 1', 'text'], ['ctaLine2', 'Orange block: line 2', 'text'], ['ctaButton', 'Orange block: button', 'text']]],
+      ['workLine1', 'Selected work: title line 1', 'text'], ['workLine2', 'Selected work: title line 2', 'text'], ['workText', 'Selected work: paragraph', 'area'],
+      ['servicesLine1', 'Services: title line 1', 'text'], ['servicesLine2', 'Services: title line 2', 'text'],
+      ['ctaLine1', 'Contact block: line 1', 'text'], ['ctaLine2', 'Contact block: line 2', 'text'], ['ctaButton', 'Contact block: button', 'text']]],
     ['About page', [
-      ['aboutKicker', 'Small line', 'text'], ['aboutLine1', 'Title line 1', 'text'], ['aboutLine2', 'Title line 2', 'text'], ['aboutIntro', 'Intro', 'area'],
-      ['aboutImage', 'Photo', 'image'], ['aboutPoint', 'Section label', 'text'], ['aboutHeading1', 'Heading line 1', 'text'], ['aboutHeading2', 'Heading line 2', 'text'], ['aboutText', 'Main text', 'area']]],
+      ['aboutLine1', 'Title line 1', 'text'], ['aboutLine2', 'Title line 2', 'text'], ['aboutIntro', 'Intro', 'area'],
+      ['aboutImage', 'Photo', 'image'], ['aboutHeading1', 'Heading line 1', 'text'], ['aboutHeading2', 'Heading line 2', 'text'], ['aboutText', 'Main text', 'area']]],
     ['Services page', [
-      ['servicesPageKicker', 'Small line', 'text'], ['servicesPageLine1', 'Title line 1', 'text'], ['servicesPageLine2', 'Title line 2', 'text'], ['servicesPageText', 'Intro', 'area']]],
-    ['Works page', [
-      ['worksKicker', 'Small line', 'text'], ['worksLine1', 'Title line 1', 'text'], ['worksLine2', 'Title line 2', 'text'], ['worksText', 'Intro', 'area']]],
-    ['Videos page', [
-      ['videosKicker', 'Small line', 'text'], ['videosLine1', 'Title line 1', 'text'], ['videosLine2', 'Title line 2', 'text'], ['videosText', 'Intro', 'area']]],
+      ['servicesPageLine1', 'Title line 1', 'text'], ['servicesPageLine2', 'Title line 2', 'text'], ['servicesPageText', 'Intro', 'area']]],
+    ['Work page', [
+      ['worksLine1', 'Title line 1', 'text'], ['worksLine2', 'Title line 2', 'text'], ['worksText', 'Intro', 'area']]],
     ['Contact page & footer', [
-      ['contactKicker', 'Small line', 'text'], ['contactLine1', 'Title line 1', 'text'], ['contactLine2', 'Title line 2', 'text'], ['contactText', 'Intro', 'area'],
-      ['contactHeading1', 'Heading line 1', 'text'], ['contactHeading2', 'Heading line 2', 'text'], ['contactIntro', 'Paragraph', 'area'],
+      ['contactLine1', 'Title line 1', 'text'], ['contactLine2', 'Title line 2', 'text'], ['contactText', 'Intro', 'area'],
       ['email', 'Email', 'text'], ['phone', 'Phone (optional)', 'text'], ['location', 'Location', 'text'],
       ['instagram', 'Instagram link (optional)', 'text'], ['linkedin', 'LinkedIn link (optional)', 'text'], ['footerNote', 'Footer note', 'text']]],
   ];
@@ -169,162 +394,229 @@
 (function () {
   const { esc, safeUrl, videoInfo, withDefaults } = window.Util;
   let D = withDefaults(null);
+  let isAdmin = false;
 
-  const L = (a, b) => `${esc(a)}${b ? '<br><em>' + esc(b) + '</em>' : ''}`;
-  const lines = (s) => esc(s).replace(/\n/g, '<br>');
+  const two = (a, b) => esc(a) + (b ? '<br>' + esc(b) : '');
+  const PLAY = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.4-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>';
 
-  function navItems() {
-    const n = D.nav;
-    return [['Home', '/', true], ['About', '/about', n.about], ['Services', '/services', n.services], ['Works', '/works', n.works],
-      ['Graphic Design', '/graphic-design', n.graphic], ['Marketing', '/marketing', n.marketing], ['Mural Art', '/mural-art', n.mural],
-      ['Videos', '/videos', n.videos], ['Contact', '/contact', n.contact]].filter((x) => x[2]);
+  const NAV = () => [['Home', '/', true], ['About', '/about', D.nav.about !== false], ['Services', '/services', D.nav.services !== false],
+    ['Work', '/works', D.nav.works !== false], ['Contact', '/contact', D.nav.contact !== false]].filter((x) => x[2]);
+
+  const playable = () => D.videos.filter((v) => videoInfo(v.url).kind !== 'none');
+
+  function brand() {
+    const s = D.site, mark = String(s.mark || '');
+    return `<a class="brand" href="#/" aria-label="${esc(s.brandName)} — home"><span class="brand-mark">${esc(mark.slice(0, 1))}<span>${esc(mark.slice(1))}</span></span><span class="brand-text"><b>${esc(s.brandName)}</b>${s.tagline ? `<small>${esc(s.tagline)}</small>` : ''}</span></a>`;
   }
 
-  function brand(small) {
-    const s = D.site;
-    const mark = String(s.mark || '');
-    const name = esc(s.brandName).replace(/\./g, '<i>.</i>');
-    return `<span class="brand-mark">${esc(mark.slice(0, 1))}<span>${esc(mark.slice(1))}</span></span><span>${name}<small>${esc(small || s.tagline)}</small></span>`;
+  /* ---------- tiles ---------- */
+  function projectTile(p) {
+    const href = '#/work/' + esc(p.slug || p.id);
+    return `<article class="tile"><a class="tile-media" href="${href}" aria-label="${esc(p.title)}">${p.image ? `<img src="${esc(safeUrl(p.image))}" alt="" loading="lazy">` : ''}</a><div class="tile-meta"><h3><a href="${href}">${esc(p.title)}</a></h3><p>${esc(p.category)}</p></div></article>`;
   }
-
-  function cards(list) {
-    if (!list.length) return '<div class="empty">No projects to show yet.</div>';
-    return `<div class="grid">${list.map((p, i) => `<a class="work" href="#/work/${esc(p.slug || p.id)}"><img src="${esc(safeUrl(p.image))}" alt="${esc(p.title)}" loading="lazy"><div class="work-meta"><div><small>${esc(p.category)}</small><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p></div><b>${String(i + 1).padStart(2, '0')} ↗</b></div></a>`).join('')}</div>`;
-  }
-
-  function pageHead(kicker, l1, l2, desc) {
-    return `<div class="page-head"><span class="eyebrow">${esc(kicker)}</span><h1>${L(l1, l2)}</h1>${desc ? `<p>${esc(desc)}</p>` : ''}</div>`;
-  }
-
-  function videoCard(v) {
+  function videoTile(v) {
     const info = videoInfo(v.url);
-    let media = '<div class="empty">Video unavailable.</div>';
-    if (info.kind === 'embed') {
-      media = `<div class="vframe"><iframe src="${esc(info.src)}" title="${esc(v.title)}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`;
-    } else if (info.kind === 'file') {
-      const poster = safeUrl(v.poster);
-      media = `<div class="vframe"><video controls preload="metadata" playsinline ${poster ? `poster="${esc(poster)}"` : ''} src="${esc(info.src)}"></video></div>`;
-    }
-    return `<article class="video-card">${media}<div class="work-meta"><div><small>${esc(v.category || 'Video')}</small><h3>${esc(v.title)}</h3>${v.description ? `<p>${esc(v.description)}</p>` : ''}</div></div></article>`;
-  }
-  const videoGrid = (list) => `<div class="video-grid">${list.map(videoCard).join('')}</div>`;
-
-  function footer() {
-    const s = D.site;
-    const links = [s.instagram && ['Instagram', s.instagram], s.linkedin && ['LinkedIn', s.linkedin]].filter(Boolean)
-      .filter((l) => safeUrl(l[1])).map((l) => `<a href="${esc(l[1])}" target="_blank" rel="noopener">${l[0]}</a>`).join(' · ');
-    return `<div class="brand">${brand()}</div><div class="footer-right">${esc(s.location)}<br>${s.email ? `<a href="mailto:${esc(s.email)}">${esc(s.email)}</a><br>` : ''}${s.phone ? esc(s.phone) + '<br>' : ''}${links ? links + '<br>' : ''}© ${new Date().getFullYear()} ${esc(s.brandName)} · <a href="/admin" class="adminlink">Admin</a></div>`;
+    const poster = safeUrl(v.poster) || info.thumb;
+    const media = poster ? `<img src="${esc(poster)}" alt="" loading="lazy">` : `<video src="${esc(info.src)}#t=0.8" preload="metadata" muted playsinline tabindex="-1"></video>`;
+    return `<article class="tile"><button class="tile-media" data-play="${esc(v.id)}" aria-label="Play video: ${esc(v.title)}">${media}<span class="vbadge">Video</span><span class="play">${PLAY}</span></button><div class="tile-meta"><h3><button data-play="${esc(v.id)}">${esc(v.title)}</button></h3>${v.description ? `<p>${esc(v.description)}</p>` : `<p>${esc(v.category || 'Video')}</p>`}</div></article>`;
   }
 
+  /* ---------- lightbox ---------- */
+  let lb;
+  function buildLightbox() {
+    lb = document.createElement('div');
+    lb.className = 'lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Video player');
+    lb.innerHTML = '<button class="lb-close" aria-label="Close video">×</button><div class="lb-box"><div class="vframe" id="lbframe"></div><div class="lb-cap" id="lbcap"></div></div>';
+    document.body.appendChild(lb);
+    lb.addEventListener('click', (e) => { if (e.target === lb || e.target.classList.contains('lb-close')) closeLb(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('on')) closeLb(); });
+  }
+  let lastFocus;
+  function openLb(id) {
+    const v = D.videos.find((x) => x.id === id); if (!v) return;
+    const info = videoInfo(v.url); if (info.kind === 'none') return;
+    lastFocus = document.activeElement;
+    const f = document.getElementById('lbframe');
+    f.innerHTML = info.kind === 'embed'
+      ? `<iframe src="${esc(info.src)}?autoplay=1&rel=0" title="${esc(v.title)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`
+      : `<video src="${esc(info.src)}" controls autoplay playsinline></video>`;
+    document.getElementById('lbcap').textContent = v.title;
+    lb.classList.add('on'); document.body.style.overflow = 'hidden';
+    lb.querySelector('.lb-close').focus();
+  }
+  function closeLb() {
+    lb.classList.remove('on'); document.getElementById('lbframe').innerHTML = ''; document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  function videoFrame(url, title) {
+    const info = videoInfo(url);
+    if (info.kind === 'embed') return `<div class="vframe"><iframe src="${esc(info.src)}" title="${esc(title)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`;
+    if (info.kind === 'file') return `<div class="vframe"><video src="${esc(info.src)}" controls preload="metadata" playsinline></video></div>`;
+    return '';
+  }
+
+  /* ---------- pages ---------- */
   function home() {
-    const s = D.site;
-    const projects = D.projects;
-    const videos = D.videos.filter((v) => videoInfo(v.url).kind !== 'none');
-    const svc = D.services;
-    return `<section class="hero"><div><span class="eyebrow">${esc(s.eyebrow)}</span><h1>${L(s.heroLine1, s.heroLine2)}</h1><p>${esc(s.heroText)}</p><div class="actions"><a class="btn" href="#/works">Explore our work ↗</a><a class="textlink" href="#/about">Get to know us ↗</a></div></div><div class="hero-image"><img src="${esc(safeUrl(s.heroImage))}" alt=""><div class="stamp">${lines(s.stamp)}</div></div></section>
-<div class="band"><span class="eyebrow">We make</span><strong>${esc(s.band1a)} <em>${esc(s.band1b)}</em> ${esc(s.band2a)} <em>${esc(s.band2b)}</em> ${esc(s.band3a)} <em>${esc(s.band3b)}</em></strong><span class="eyebrow">${esc(s.bandRight)}</span></div>
-<section class="section"><div class="section-head"><div><span class="eyebrow">${esc(s.workKicker)}</span><h2>${L(s.workLine1, s.workLine2)}</h2></div><p>${esc(s.workText)}</p></div>${cards(projects.slice(0, 3))}</section>
-${videos.length ? `<section class="section vsec"><div class="section-head"><div><span class="eyebrow">Moving image</span><h2>Watch <em>the work.</em></h2></div><a class="textlink" href="#/videos">All videos ↗</a></div>${videoGrid(videos.slice(0, 2))}</section>` : ''}
-<section class="services"><div><span class="eyebrow">${esc(s.servicesKicker)}</span><h2>${L(s.servicesLine1, s.servicesLine2)}</h2></div><div class="service-list">${svc.map((x) => `<a href="${esc(safeUrl(x.link) || '#/services')}"><span>${esc(x.num)}</span> ${esc(x.title)} ↗</a>`).join('')}</div></section>
-<section class="cta-block"><span class="eyebrow">${esc(s.ctaKicker)}</span><h2>${L(s.ctaLine1, s.ctaLine2)}</h2><a class="btn dark" href="#/contact">${esc(s.ctaButton)} ↗</a></section>`;
+    const s = D.site, vids = playable();
+    const picks = vids.length ? [...D.projects.slice(0, 2).map(projectTile), videoTile(vids[0])] : D.projects.slice(0, 3).map(projectTile);
+    return `<section class="hero"><div class="wrap hero-grid"><div><h1>${two(s.heroLine1, s.heroLine2)}</h1><p class="lede">${esc(s.heroText)}</p><div class="btns"><a class="btn" href="#/works">See the work</a><a class="btn ghost" href="#/contact">Start a project</a></div></div><div class="paint">${s.heroImage ? `<img src="${esc(safeUrl(s.heroImage))}" alt="">` : ''}</div></div></section>
+<section class="statement"><div class="wrap"><p>${esc(s.band1a)} ${esc(s.band1b)} ${esc(s.band2a)} ${esc(s.band2b)} ${esc(s.band3a)} ${esc(s.band3b)}</p></div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>${two(s.workLine1, s.workLine2)}</h2><p>${esc(s.workText)} <a class="textlink" href="#/works">All work</a></p></div>${picks.length ? `<div class="tiles">${picks.join('')}</div>` : '<div class="empty">Projects will appear here.</div>'}</div></section>
+<section class="sec tight"><div class="wrap"><div class="sec-head"><h2>${two(s.servicesLine1, s.servicesLine2)}</h2></div><div class="svc">${D.services.map((x) => `<a href="${esc(safeUrl(x.link) || '#/services')}"><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></a>`).join('')}</div></div></section>
+<section class="cta-band"><div class="wrap"><h2>${two(s.ctaLine1, s.ctaLine2)}</h2><a class="btn light" href="#/contact">${esc(s.ctaButton)}</a></div></section>`;
   }
 
   function about() {
     const s = D.site;
-    return `${pageHead(s.aboutKicker, s.aboutLine1, s.aboutLine2, s.aboutIntro)}<section class="page-content about-row"><img src="${esc(safeUrl(s.aboutImage))}" alt=""><div><span class="eyebrow">${esc(s.aboutPoint)}</span><h2>${L(s.aboutHeading1, s.aboutHeading2)}</h2><p>${esc(s.aboutText)}</p></div></section>`;
+    return `<section class="page-top"><div class="wrap"><h1>${two(s.aboutLine1, s.aboutLine2)}</h1><p class="lede">${esc(s.aboutIntro)}</p></div></section>
+<section class="sec tight"><div class="wrap about-grid">${s.aboutImage ? `<img src="${esc(safeUrl(s.aboutImage))}" alt="">` : '<div></div>'}<div><h2>${two(s.aboutHeading1, s.aboutHeading2)}</h2><p>${esc(s.aboutText)}</p></div></div></section>`;
   }
 
   function services() {
     const s = D.site;
-    return `${pageHead(s.servicesPageKicker, s.servicesPageLine1, s.servicesPageLine2, s.servicesPageText)}<section class="page-content service-cards">${D.services.map((x) => `<article class="service-card"><b>${esc(x.num)} / ${esc(x.tag)}</b><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></article>`).join('')}</section>`;
+    return `<section class="page-top"><div class="wrap"><h1>${two(s.servicesPageLine1, s.servicesPageLine2)}</h1><p class="lede">${esc(s.servicesPageText)}</p></div></section>
+<section class="sec tight"><div class="wrap"><div class="svc">${D.services.map((x) => `<div class="row"><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div>`).join('')}</div></div></section>`;
   }
 
-  function works(path) {
+  function filterList() {
+    const cats = [];
+    D.projects.concat(playable()).forEach((x) => { if (x.category && !cats.includes(x.category)) cats.push(x.category); });
+    return [['all', 'All']].concat(cats.map((c) => [c, c]));
+  }
+  function itemsFor(f) {
+    const vids = playable();
+    if (f === 'all') return D.projects.map(projectTile).concat(vids.map(videoTile));
+    return D.projects.filter((p) => p.category === f).map(projectTile).concat(vids.filter((v) => v.category === f).map(videoTile));
+  }
+  function tilesHtml(f) {
+    const items = itemsFor(f);
+    return items.length ? items.join('') : '<div class="empty" style="grid-column:1/-1">Nothing here yet.</div>';
+  }
+  function works(filter) {
     const s = D.site;
-    const f = path === '/graphic-design' ? 'Graphic Design' : path === '/marketing' ? 'Marketing' : path === '/mural-art' ? 'Mural Art' : '';
-    const list = f ? D.projects.filter((p) => p.category === f) : D.projects;
-    const videos = !f ? D.videos.filter((v) => videoInfo(v.url).kind !== 'none') : [];
-    return `${pageHead(f || s.worksKicker, s.worksLine1, s.worksLine2, s.worksText)}<section class="page-content">${cards(list)}</section>${videos.length ? `<section class="page-content vsec2"><div class="section-head"><div><span class="eyebrow">Moving image</span><h2>Videos</h2></div><a class="textlink" href="#/videos">All videos ↗</a></div>${videoGrid(videos)}</section>` : ''}`;
+    const fl = filterList();
+    if (!fl.some((x) => x[0] === filter)) filter = 'all';
+    return `<section class="page-top"><div class="wrap"><h1>${two(s.worksLine1, s.worksLine2)}</h1><p class="lede">${esc(s.worksText)}</p></div></section>
+<section class="sec tight"><div class="wrap"><div class="filters" role="group" aria-label="Filter work">${fl.map(([k, l]) => `<button class="chip" data-filter="${esc(k)}" aria-pressed="${k === filter}">${esc(l)}</button>`).join('')}</div><div class="tiles" id="tiles">${tilesHtml(filter)}</div></div></section>`;
   }
 
   function detail(path) {
-    const key = path.slice(6);
+    const key = decodeURIComponent(path.slice(6));
     const list = D.projects;
     const i = list.findIndex((p) => (p.slug || p.id) === key || p.id === key);
-    if (i < 0) return `${pageHead('404', 'Project not', 'found.')}<section class="page-content"><a class="btn" href="#/works">Back to works ↗</a></section>`;
+    if (i < 0) return `<section class="page-top"><div class="wrap"><h1>Project not found</h1><p class="lede">It may have been moved or hidden.</p><p><a class="btn" href="#/works">Back to work</a></p></div></section>`;
     const p = list[i], prev = list[(i + list.length - 1) % list.length], next = list[(i + 1) % list.length];
     document.title = p.title + ' — ' + D.site.brandName;
     const big = safeUrl(p.image).replace('w=1000', 'w=1800');
-    const vi = videoInfo(p.videoUrl);
-    return `<section class="detail-head"><a class="textlink" href="#/works">← All works</a><span class="eyebrow">${esc(p.category)}</span><h1>${esc(p.title)}</h1><p>${esc(p.summary)}</p></section><div class="detail-hero"><img src="${esc(big)}" alt="${esc(p.title)}" onerror="this.onerror=null;this.src='${esc(safeUrl(p.image))}'"></div>${vi.kind !== 'none' ? `<div class="detail-video">${videoCard({ title: p.title, url: p.videoUrl, category: 'Project film', description: '' })}</div>` : ''}<section class="detail-body"><dl class="detail-facts"><div><dt>Year</dt><dd>${esc(p.year)}</dd></div><div><dt>Category</dt><dd>${esc(p.category)}</dd></div><div><dt>Type</dt><dd>${esc(p.type)}</dd></div><div><dt>Services</dt><dd>${esc(p.services)}</dd></div></dl><div class="detail-text"><span class="eyebrow">The project</span><h2>${esc(p.desc)}</h2><p>${esc(p.body)}</p><a class="btn" href="#/contact">Start a similar project ↗</a></div></section>${list.length > 1 ? `<section class="detail-nav"><a href="#/work/${esc(prev.slug || prev.id)}"><small>← Previous</small><b>${esc(prev.title)}</b></a><a href="#/work/${esc(next.slug || next.id)}"><small>Next →</small><b>${esc(next.title)}</b></a></section>` : ''}`;
-  }
-
-  function videos() {
-    const s = D.site;
-    const list = D.videos.filter((v) => videoInfo(v.url).kind !== 'none');
-    return `${pageHead(s.videosKicker, s.videosLine1, s.videosLine2, s.videosText)}<section class="page-content">${list.length ? videoGrid(list) : '<div class="empty">Videos are coming soon.</div>'}</section>`;
+    const vf = videoFrame(p.videoUrl, p.title);
+    return `<section class="d-top"><div class="wrap"><a class="textlink" href="#/works">All work</a><h1>${esc(p.title)}</h1><p class="lede">${esc(p.summary)}</p></div></section>
+<div class="wrap d-hero">${p.image ? `<img src="${esc(big)}" alt="${esc(p.title)}" onerror="this.onerror=null;this.src='${esc(safeUrl(p.image))}'">` : ''}</div>
+${vf ? `<div class="wrap d-video">${vf}</div>` : ''}
+<section class="wrap d-body"><dl class="facts"><div><dt>Year</dt><dd>${esc(p.year)}</dd></div><div><dt>Category</dt><dd>${esc(p.category)}</dd></div>${p.type ? `<div><dt>Type</dt><dd>${esc(p.type)}</dd></div>` : ''}${p.services ? `<div><dt>What we did</dt><dd>${esc(p.services)}</dd></div>` : ''}</dl><div class="d-text"><h2>${esc(p.desc)}</h2><p>${esc(p.body)}</p><a class="btn" href="#/contact">Start a similar project</a></div></section>
+${list.length > 1 ? `<nav class="d-nav" aria-label="More projects"><a href="#/work/${esc(prev.slug || prev.id)}"><small>Previous</small><b>${esc(prev.title)}</b></a><a href="#/work/${esc(next.slug || next.id)}"><small>Next</small><b>${esc(next.title)}</b></a></nav>` : ''}`;
   }
 
   function contact() {
     const s = D.site;
-    const info = `<p><b>Location</b><br>${esc(s.location)}</p>${s.email ? `<p><b>Email</b><br><a href="mailto:${esc(s.email)}">${esc(s.email)}</a></p>` : ''}${s.phone ? `<p><b>Phone</b><br>${esc(s.phone)}</p>` : ''}`;
-    return `${pageHead(s.contactKicker, s.contactLine1, s.contactLine2, s.contactText)}<section class="page-content contact"><div><h2>${L(s.contactHeading1, s.contactHeading2)}</h2><p>${esc(s.contactIntro)}</p>${info}</div><form id="cform"><input name="name" placeholder="Your name" required maxlength="120"><input name="email" type="email" placeholder="Email address" required maxlength="160"><input name="subject" placeholder="Project or subject" maxlength="200"><input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><textarea name="message" placeholder="Tell us about your idea..." required maxlength="4000"></textarea><button class="btn" type="submit">Send enquiry ↗</button><p class="notice" id="formnotice"></p></form></section>`;
+    return `<section class="page-top"><div class="wrap"><h1>${two(s.contactLine1, s.contactLine2)}</h1><p class="lede">${esc(s.contactText)}</p></div></section>
+<section class="sec tight"><div class="wrap contact-grid"><div class="info"><p><b>Location</b>${esc(s.location)}</p>${s.email ? `<p><b>Email</b><a href="mailto:${esc(s.email)}">${esc(s.email)}</a></p>` : ''}${s.phone ? `<p><b>Phone</b>${esc(s.phone)}</p>` : ''}</div>
+<form class="cform" id="cform"><label class="fld"><span>Your name</span><input name="name" required maxlength="120" autocomplete="name"></label><label class="fld"><span>Email address</span><input name="email" type="email" required maxlength="160" autocomplete="email"></label><label class="fld"><span>What is it about?</span><input name="subject" maxlength="200"></label><input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><label class="fld"><span>Tell us about your project</span><textarea name="message" required maxlength="4000"></textarea></label><div><button class="btn" type="submit">Send message</button></div><p class="notice" id="formnotice" role="status"></p></form></div></section>`;
+  }
+
+  function footer() {
+    const s = D.site;
+    const soc = [['Instagram', s.instagram], ['LinkedIn', s.linkedin]].filter((l) => l[1] && safeUrl(l[1]));
+    return `<div class="wrap"><p class="f-big">${esc(s.brandName)}</p><div class="f-cols"><div><h4>Say hello</h4>${s.email ? `<a href="mailto:${esc(s.email)}">${esc(s.email)}</a>` : ''}${s.phone ? `<span>${esc(s.phone)}</span><br>` : ''}<span>${esc(s.location)}</span></div><div><h4>Pages</h4>${NAV().map(([n, p]) => `<a href="#${p}">${n}</a>`).join('')}</div><div>${soc.length ? `<h4>Elsewhere</h4>${soc.map((l) => `<a href="${esc(l[1])}" target="_blank" rel="noopener">${l[0]}</a>`).join('')}` : `<h4>Studio</h4><span>${esc(s.footerNote)}</span>`}</div></div><p class="f-base">© ${new Date().getFullYear()} ${esc(s.brandName)}${soc.length && s.footerNote ? '. ' + esc(s.footerNote) : ''}</p></div>`;
+  }
+
+  /* ---------- shell ---------- */
+  function header(path) {
+    const cur = (p) => (path === p || (p === '/works' && path.startsWith('/work/')) ? ' aria-current="page"' : '');
+    const links = NAV();
+    return `${isAdmin ? `<div class="adminbar"><div class="wrap"><span>You are signed in as admin. Edit anything from the dashboard.</span><span class="acts"><a href="/admin">Open dashboard</a><button id="adm-out">Sign out</button></span></div></div>` : ''}
+<div class="site-header"><div class="wrap hdr-in">${brand()}<nav class="primary-nav" aria-label="Main">${links.map(([n, p]) => `<a href="#${p}"${cur(p)}>${n}</a>`).join('')}</nav><div class="hdr-actions">${isAdmin ? '<a class="admin-pill" href="/admin"><i></i>Admin</a>' : ''}<a class="btn" href="#/contact">Start a project</a><button class="menu-btn" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="sheet"><span></span></button></div></div></div>
+<div class="sheet" id="sheet">${links.map(([n, p]) => `<a class="nl" href="#${p}"${cur(p)}>${n}</a>`).join('')}<a class="btn" href="#/contact">Start a project</a>${isAdmin ? '<a class="admin-pill" href="/admin"><i></i>Admin dashboard</a>' : ''}</div>`;
+  }
+  function setMenu(on) {
+    const b = document.getElementById('menu'), sh = document.getElementById('sheet'); if (!b) return;
+    b.setAttribute('aria-expanded', on); sh.classList.toggle('open', on); document.body.style.overflow = on ? 'hidden' : '';
   }
 
   function wireContact() {
-    const f = document.getElementById('cform');
-    if (!f) return;
+    const f = document.getElementById('cform'); if (!f) return;
     f.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const note = document.getElementById('formnotice');
-      const btn = f.querySelector('button');
+      const note = document.getElementById('formnotice'), btn = f.querySelector('button');
       const data = Object.fromEntries(new FormData(f).entries());
-      btn.disabled = true; note.textContent = 'Sending…';
+      btn.disabled = true; note.className = 'notice'; note.textContent = 'Sending…';
       try {
         const r = await fetch('/api/contact', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) });
         const j = await r.json().catch(() => ({}));
         if (!r.ok) throw new Error(j.error || 'failed');
-        f.reset(); note.textContent = 'Thank you! Your message has been sent.';
+        f.reset(); note.className = 'notice ok'; note.textContent = 'Message sent. Thank you, we will reply by email.';
       } catch (err) {
         const em = D.site.email;
         if (em && location.protocol === 'file:') {
           location.href = 'mailto:' + em + '?subject=' + encodeURIComponent(data.subject || '') + '&body=' + encodeURIComponent((data.message || '') + '\n\nFrom: ' + data.name + ' (' + data.email + ')');
-        } else note.textContent = err.message && err.message !== 'failed' ? err.message : 'Sorry, something went wrong. Please email us directly.';
+        } else { note.className = 'notice err'; note.textContent = err.message && err.message !== 'failed' ? err.message : 'The message could not be sent. Please email us directly.'; }
       }
       btn.disabled = false;
     });
   }
 
+  function wireWorks() {
+    document.querySelectorAll('[data-filter]').forEach((b) => b.addEventListener('click', () => {
+      const k = b.dataset.filter;
+      document.querySelectorAll('[data-filter]').forEach((x) => x.setAttribute('aria-pressed', x === b));
+      document.getElementById('tiles').innerHTML = tilesHtml(k);
+      history.replaceState(null, '', '#/works' + (k === 'all' ? '' : '?cat=' + encodeURIComponent(k)));
+    }));
+  }
+
+  function route() {
+    let h = location.hash.replace(/^#/, '') || '/';
+    let q = ''; const qi = h.indexOf('?');
+    if (qi >= 0) { q = h.slice(qi + 1); h = h.slice(0, qi); }
+    const cat = new URLSearchParams(q).get('cat') || 'all';
+    // old links
+    const legacy = { '/graphic-design': 'Graphic Design', '/marketing': 'Marketing', '/mural-art': 'Mural Art', '/videos': 'all' };
+    if (legacy[h]) return { path: '/works', filter: legacy[h] };
+    return { path: h, filter: cat };
+  }
+
   function render() {
-    const path = location.hash.replace(/^#/, '') || '/';
-    document.title = D.site.brandName + ' — ' + 'Creative Studio';
+    const { path, filter } = route();
+    document.title = D.site.brandName + ' — ' + (D.site.tagline || 'Portfolio');
     let html;
     if (path === '/') html = home();
     else if (path === '/about') html = about();
     else if (path === '/services') html = services();
-    else if (['/works', '/graphic-design', '/marketing', '/mural-art'].includes(path)) html = works(path);
+    else if (path === '/works') html = works(filter);
     else if (path.startsWith('/work/')) html = detail(path);
-    else if (path === '/videos') html = videos();
     else if (path === '/contact') html = contact();
-    else html = `${pageHead('404', 'Page not', 'found.')}<section class="page-content"><a class="btn" href="#/">Back home ↗</a></section>`;
+    else html = `<section class="page-top"><div class="wrap"><h1>Page not found</h1><p class="lede">That page does not exist.</p><p><a class="btn" href="#/">Back home</a></p></div></section>`;
 
-    document.getElementById('hdr').innerHTML = `<a class="brand" href="#/">${brand()}</a><button class="menu" aria-label="Open menu">☰</button><nav id="nav">${navItems().map(([n, p]) => `<a href="#${p}" class="${path === p || (p === '/works' && path.startsWith('/work/')) ? 'active' : ''}">${n}</a>`).join('')}</nav><a class="cta" href="#/contact">Start a project ↗</a>`;
-    document.querySelector('#hdr .menu').onclick = () => document.getElementById('nav').classList.toggle('open');
+    document.getElementById('hdr').innerHTML = header(path);
     document.getElementById('app').innerHTML = html;
     document.getElementById('ftr').innerHTML = footer();
-    wireContact();
+    document.body.style.overflow = '';
+    const mb = document.getElementById('menu'); if (mb) mb.onclick = () => setMenu(mb.getAttribute('aria-expanded') !== 'true');
+    document.querySelectorAll('#sheet a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+    const out = document.getElementById('adm-out');
+    if (out) out.onclick = async () => { try { await fetch('/api/logout', { method: 'POST', credentials: 'same-origin' }); } catch (e) {} isAdmin = false; render(); };
+    wireContact(); wireWorks();
     window.scrollTo(0, 0);
   }
 
   async function boot() {
+    buildLightbox();
+    document.addEventListener('click', (e) => { const b = e.target.closest('[data-play]'); if (b) { e.preventDefault(); openLb(b.dataset.play); } });
     if (location.protocol !== 'file:') {
-      try {
-        const ctl = new AbortController();
-        const t = setTimeout(() => ctl.abort(), 4000);
-        const r = await fetch('/api/content', { signal: ctl.signal, cache: 'no-store' });
-        clearTimeout(t);
-        if (r.ok) D = withDefaults((await r.json()).content);
-      } catch (e) { /* use defaults */ }
+      const get = async (u) => { const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 4000); try { const r = await fetch(u, { signal: ctl.signal, cache: 'no-store', credentials: 'same-origin' }); return r.ok ? await r.json() : null; } catch (e) { return null; } finally { clearTimeout(t); } };
+      const [c, s] = await Promise.all([get('/api/content'), get('/api/session')]);
+      if (c) D = withDefaults(c.content);
+      isAdmin = Boolean(s && s.admin);
     }
     window.addEventListener('hashchange', render);
     render();
@@ -332,4 +624,5 @@ ${videos.length ? `<section class="section vsec"><div class="section-head"><div>
   boot();
 })();
 </script>
-</body></html>
+</body>
+</html>
