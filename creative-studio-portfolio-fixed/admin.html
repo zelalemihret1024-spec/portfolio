@@ -84,7 +84,8 @@ code{background:var(--sand);padding:1px 5px}
   <form class="login-card" id="loginForm">
     <span class="eyebrow">Private area</span>
     <h1>Admin <em>login.</em></h1>
-    <p>Sign in to edit your website.</p>
+    <p>Only the owner's email and password can sign in.</p>
+    <label class="f" id="emailRow"><span>Admin email</span><input type="email" id="em" autocomplete="username" placeholder="you@example.com"></label>
     <label class="f"><span>Password</span><input type="password" id="pw" autocomplete="current-password" required autofocus></label>
     <button class="btn" id="loginBtn">Sign in ↗</button>
     <div id="loginMsg"></div>
@@ -111,7 +112,156 @@ code{background:var(--sand);padding:1px 5px}
 
 <div id="toast" class="toast" hidden></div>
 
-<script src="/shared.js"></script>
+<script>/* Shared by the public site and the admin dashboard: default content + helpers. */
+(function () {
+  const U = 'https://images.unsplash.com/';
+  window.DEFAULTS = {
+    site: {
+      brandName: 'ZELALEM.M',
+      mark: 'ZM',
+      tagline: 'CREATIVE STUDIO',
+      eyebrow: 'Independent creative studio · Addis Ababa',
+      heroLine1: 'Make it',
+      heroLine2: 'matter.',
+      heroText: 'We build bold brands, thoughtful campaigns and art-filled spaces. Strategy, design and creativity — all under one roof.',
+      stamp: 'MAKE\nIT\nMATTER.',
+      heroImage: U + 'photo-1513364776144-60967b0f800f?w=1200',
+      band1a: 'Brands', band1b: 'bold.',
+      band2a: 'Ideas', band2b: 'visible.',
+      band3a: 'Spaces', band3b: 'alive.',
+      bandRight: 'Design · Strategy · Art',
+      workKicker: 'Selected projects / 2024—26',
+      workLine1: 'Work that',
+      workLine2: 'moves people.',
+      workText: 'A selection of visual identities, campaigns and art-led projects made with purpose.',
+      servicesKicker: 'What we do',
+      servicesLine1: 'Creative range.',
+      servicesLine2: 'One clear point of view.',
+      ctaKicker: 'Have something in mind?',
+      ctaLine1: "Let's make",
+      ctaLine2: 'something matter.',
+      ctaButton: 'Tell us about it',
+      aboutKicker: 'A little about us',
+      aboutLine1: 'Ideas with',
+      aboutLine2: 'character.',
+      aboutIntro: 'We are a creative studio bringing design, marketing and mural art together to make work with meaning.',
+      aboutImage: U + 'photo-1513364776144-60967b0f800f?w=1200',
+      aboutPoint: 'Our point of view',
+      aboutHeading1: 'Make it meaningful.',
+      aboutHeading2: 'Make it memorable.',
+      aboutText: 'We listen closely, think strategically and make with intention — because every detail is a chance to make a connection. From the first sketch to the final wall, we believe good creative work should make people feel something.',
+      servicesPageKicker: 'How we help',
+      servicesPageLine1: 'A creative toolkit',
+      servicesPageLine2: 'for ambitious ideas.',
+      servicesPageText: 'From first thought to final finish, we shape the pieces that make your brand distinct.',
+      worksKicker: 'The portfolio',
+      worksLine1: 'Selected work.',
+      worksLine2: 'Real-world impact.',
+      worksText: 'A mix of identities, campaigns, visual experiments and spaces transformed through art.',
+      videosKicker: 'Moving image',
+      videosLine1: 'Ideas in',
+      videosLine2: 'motion.',
+      videosText: 'Films, edits and moving-image stories from our creative projects.',
+      contactKicker: 'Start a conversation',
+      contactLine1: "Let's make",
+      contactLine2: 'something matter.',
+      contactText: 'Have a project, collaboration or idea? Tell us a little about it.',
+      contactHeading1: 'Have a good one',
+      contactHeading2: 'in mind?',
+      contactIntro: 'We would love to hear what you are working on. Reach out and let’s make something meaningful.',
+      email: 'hello@example.com',
+      phone: '',
+      location: 'Addis Ababa, Ethiopia',
+      instagram: '',
+      linkedin: '',
+      footerNote: 'Good ideas deserve to be seen.',
+    },
+    projects: [
+      { id: 'p1', slug: 'a-new-visual-language', title: 'A New Visual Language', category: 'Graphic Design', image: U + 'photo-1541701494587-cb58502866ab?w=1000', desc: 'A bold visual identity built to stand apart.', summary: 'A growing local brand needed to look as confident as it sounded.', body: 'We built a flexible identity system: logo, colour palette, typography and layout rules that work from business cards to billboards.', year: '2025', type: 'Brand identity', services: 'Logo design · Colour system · Typography · Brand guidelines', videoUrl: '', visible: true },
+      { id: 'p2', slug: 'culture-in-motion', title: 'Culture in Motion', category: 'Marketing', image: U + 'photo-1531058020387-3be344556be6?w=1000', desc: 'A campaign connecting people, place and ideas.', summary: 'A campaign to bring people, place and ideas together.', body: 'We developed the concept, the content plan and the visuals, then adapted them for social media, print and in-person events.', year: '2025', type: 'Campaign', services: 'Campaign concept · Content direction · Social media · Print', videoUrl: '', visible: true },
+      { id: 'p3', slug: 'walls-that-speak', title: 'Walls That Speak', category: 'Mural Art', image: U + 'photo-1549490349-8643362247b5?w=1000', desc: 'Public art that brings colour and energy to a space.', summary: 'A blank wall became a landmark for the neighbourhood.', body: 'Working with the community, we designed and painted a large-scale mural that reflects the stories of the people who live nearby.', year: '2024', type: 'Public mural', services: 'Mural design · Wall painting · Community workshops', videoUrl: '', visible: true },
+      { id: 'p4', slug: 'colour-studies', title: 'Colour Studies', category: 'Graphic Design', image: U + 'photo-1541961017774-22349e4a1262?w=1000', desc: 'An exploration of colour, shape and typography.', summary: 'An open exploration of colour, shape and typography.', body: 'A series of visual experiments that test how far colour and form can carry a message before words are needed.', year: '2024', type: 'Personal project', services: 'Art direction · Illustration · Typography', videoUrl: '', visible: true },
+      { id: 'p5', slug: 'street-stories', title: 'Street Stories', category: 'Mural Art', image: U + 'photo-1561214115-f2f134cc4912?w=1000', desc: 'Art inspired by the rhythm of the city.', summary: 'Art inspired by the rhythm of the city.', body: 'Figures, signs and everyday moments were turned into a painted street story that changes as you walk past it.', year: '2026', type: 'Public mural', services: 'Mural design · Environmental graphics · Wall painting', videoUrl: '', visible: true },
+      { id: 'p6', slug: 'the-big-idea', title: 'The Big Idea', category: 'Marketing', image: U + 'photo-1497366754035-f200968a6e72?w=1000', desc: 'Strategy and creative direction for a growing brand.', summary: 'Strategy and creative direction for a growing brand.', body: 'We clarified the brand’s message, set the creative direction, and gave the team a clear plan for what to make next.', year: '2026', type: 'Strategy', services: 'Brand strategy · Creative direction · Messaging', videoUrl: '', visible: true },
+    ],
+    videos: [
+      { id: 'v1', title: 'Sample video — replace me', category: 'Motion', description: 'A sample clip so you can see how videos look. Replace it in the admin with your own work.', url: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4', poster: '', visible: true },
+      { id: 'v2', title: 'Sample video 2 — replace me', category: 'Motion', description: 'Paste a YouTube or Vimeo link, or upload an MP4, from the admin dashboard.', url: 'https://www.w3schools.com/html/mov_bbb.mp4', poster: '', visible: true },
+    ],
+    services: [
+      { id: 's1', num: '01', tag: 'DESIGN', title: 'Graphic design', text: 'Visual identities, print, digital design, art direction and brand systems.', link: '#/graphic-design', visible: true },
+      { id: 's2', num: '02', tag: 'STRATEGY', title: 'Marketing', text: 'Campaign concepts, content direction, creative strategy and storytelling.', link: '#/marketing', visible: true },
+      { id: 's3', num: '03', tag: 'ART', title: 'Mural art', text: 'Custom murals, public art, environmental graphics and wall painting.', link: '#/mural-art', visible: true },
+    ],
+    // Which pages appear in the top menu.
+    nav: { about: true, services: true, works: true, graphic: true, marketing: true, mural: true, videos: true, contact: true },
+  };
+
+  // Fields shown in the admin "Site text" tab: [key, label, type]
+  window.SCHEMA = [
+    ['Brand & header', [
+      ['brandName', 'Brand name', 'text'], ['mark', 'Logo letters (2)', 'text'], ['tagline', 'Small text under name', 'text']]],
+    ['Home — top', [
+      ['eyebrow', 'Small line above title', 'text'], ['heroLine1', 'Title line 1', 'text'], ['heroLine2', 'Title line 2 (italic)', 'text'],
+      ['heroText', 'Intro paragraph', 'area'], ['stamp', 'Orange stamp text (one word per line)', 'area'], ['heroImage', 'Top image', 'image']]],
+    ['Home — black band', [
+      ['band1a', 'Word 1', 'text'], ['band1b', 'Word 1 (italic)', 'text'], ['band2a', 'Word 2', 'text'], ['band2b', 'Word 2 (italic)', 'text'],
+      ['band3a', 'Word 3', 'text'], ['band3b', 'Word 3 (italic)', 'text'], ['bandRight', 'Right-side text', 'text']]],
+    ['Home — sections', [
+      ['workKicker', 'Projects: small line', 'text'], ['workLine1', 'Projects: title line 1', 'text'], ['workLine2', 'Projects: title line 2', 'text'], ['workText', 'Projects: paragraph', 'area'],
+      ['servicesKicker', 'Services: small line', 'text'], ['servicesLine1', 'Services: title line 1', 'text'], ['servicesLine2', 'Services: title line 2', 'text'],
+      ['ctaKicker', 'Orange block: small line', 'text'], ['ctaLine1', 'Orange block: line 1', 'text'], ['ctaLine2', 'Orange block: line 2', 'text'], ['ctaButton', 'Orange block: button', 'text']]],
+    ['About page', [
+      ['aboutKicker', 'Small line', 'text'], ['aboutLine1', 'Title line 1', 'text'], ['aboutLine2', 'Title line 2', 'text'], ['aboutIntro', 'Intro', 'area'],
+      ['aboutImage', 'Photo', 'image'], ['aboutPoint', 'Section label', 'text'], ['aboutHeading1', 'Heading line 1', 'text'], ['aboutHeading2', 'Heading line 2', 'text'], ['aboutText', 'Main text', 'area']]],
+    ['Services page', [
+      ['servicesPageKicker', 'Small line', 'text'], ['servicesPageLine1', 'Title line 1', 'text'], ['servicesPageLine2', 'Title line 2', 'text'], ['servicesPageText', 'Intro', 'area']]],
+    ['Works page', [
+      ['worksKicker', 'Small line', 'text'], ['worksLine1', 'Title line 1', 'text'], ['worksLine2', 'Title line 2', 'text'], ['worksText', 'Intro', 'area']]],
+    ['Videos page', [
+      ['videosKicker', 'Small line', 'text'], ['videosLine1', 'Title line 1', 'text'], ['videosLine2', 'Title line 2', 'text'], ['videosText', 'Intro', 'area']]],
+    ['Contact page & footer', [
+      ['contactKicker', 'Small line', 'text'], ['contactLine1', 'Title line 1', 'text'], ['contactLine2', 'Title line 2', 'text'], ['contactText', 'Intro', 'area'],
+      ['contactHeading1', 'Heading line 1', 'text'], ['contactHeading2', 'Heading line 2', 'text'], ['contactIntro', 'Paragraph', 'area'],
+      ['email', 'Email', 'text'], ['phone', 'Phone (optional)', 'text'], ['location', 'Location', 'text'],
+      ['instagram', 'Instagram link (optional)', 'text'], ['linkedin', 'LinkedIn link (optional)', 'text'], ['footerNote', 'Footer note', 'text']]],
+  ];
+
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  // Only allow normal web links and our own uploads in src/href attributes.
+  const safeUrl = (u) => {
+    u = String(u || '').trim();
+    return /^(https?:\/\/|\/media\/|mailto:|#\/|tel:)/i.test(u) ? u : '';
+  };
+  const slugify = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'project';
+
+  // Turn a pasted video link into something we can show.
+  function videoInfo(url) {
+    url = String(url || '').trim();
+    let m = url.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/i);
+    if (m) return { kind: 'embed', src: 'https://www.youtube-nocookie.com/embed/' + m[1], thumb: 'https://img.youtube.com/vi/' + m[1] + '/hqdefault.jpg' };
+    m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/i);
+    if (m) return { kind: 'embed', src: 'https://player.vimeo.com/video/' + m[1], thumb: '' };
+    if (safeUrl(url) && /^https?:|^\/media\//i.test(url)) return { kind: 'file', src: url, thumb: '' };
+    return { kind: 'none', src: '', thumb: '' };
+  }
+
+  // Merge saved content over the defaults so new fields never break an older save.
+  function withDefaults(c) {
+    const d = JSON.parse(JSON.stringify(window.DEFAULTS));
+    if (!c) return d;
+    return {
+      site: Object.assign(d.site, c.site || {}),
+      projects: Array.isArray(c.projects) ? c.projects : d.projects,
+      videos: Array.isArray(c.videos) ? c.videos : d.videos,
+      services: Array.isArray(c.services) ? c.services : d.services,
+      nav: Object.assign(d.nav, c.nav || {}),
+    };
+  }
+
+  window.Util = { esc, safeUrl, slugify, videoInfo, withDefaults };
+})();
+</script>
 <script>
 (function(){
 const {esc,slugify,withDefaults,videoInfo}=window.Util;
@@ -134,7 +284,7 @@ window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.return
 function showLogin(msg){C=null;$('#app').hidden=true;$('#login').hidden=false;if(msg)$('#loginMsg').innerHTML='<div class="msg">'+esc(msg)+'</div>'}
 $('#loginForm').addEventListener('submit',async e=>{
   e.preventDefault();const b=$('#loginBtn');b.disabled=true;$('#loginMsg').innerHTML='';
-  try{await api('/api/login',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({password:$('#pw').value})});$('#pw').value='';await start()}
+  try{await api('/api/login',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:$('#em').value,password:$('#pw').value})});$('#pw').value='';await start()}
   catch(err){$('#loginMsg').innerHTML='<div class="msg">'+esc(err.message)+'</div>'}
   b.disabled=false;
 });
@@ -144,6 +294,7 @@ async function start(){
   const s=await fetch('/api/session',{credentials:'same-origin'}).then(r=>r.json()).catch(()=>({}));
   if(!s.admin){
     $('#login').hidden=false;$('#app').hidden=true;
+    $('#emailRow').hidden=(s.needsEmail===false);
     if(s.configured===false)$('#loginMsg').innerHTML='<div class="msg info"><b>One setup step left.</b> Add a secret called <code>ADMIN_PASSWORD</code> in Cloudflare (Worker → Settings → Variables and Secrets), then redeploy and refresh this page.</div>';
     return;
   }
