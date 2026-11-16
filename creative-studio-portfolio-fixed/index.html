@@ -14,6 +14,322 @@
 <header class="header" id="hdr"></header>
 <div id="app"></div>
 <footer class="footer" id="ftr"></footer>
-<script src="/shared.js"></script>
-<script src="/app.js"></script>
+<noscript><p style="padding:40px;font-family:Arial">Please enable JavaScript to view this website.</p></noscript>
+<script>/* Shared by the public site and the admin dashboard: default content + helpers. */
+(function () {
+  const U = 'https://images.unsplash.com/';
+  window.DEFAULTS = {
+    site: {
+      brandName: 'ZELALEM.M',
+      mark: 'ZM',
+      tagline: 'CREATIVE STUDIO',
+      eyebrow: 'Independent creative studio · Addis Ababa',
+      heroLine1: 'Make it',
+      heroLine2: 'matter.',
+      heroText: 'We build bold brands, thoughtful campaigns and art-filled spaces. Strategy, design and creativity — all under one roof.',
+      stamp: 'MAKE\nIT\nMATTER.',
+      heroImage: U + 'photo-1513364776144-60967b0f800f?w=1200',
+      band1a: 'Brands', band1b: 'bold.',
+      band2a: 'Ideas', band2b: 'visible.',
+      band3a: 'Spaces', band3b: 'alive.',
+      bandRight: 'Design · Strategy · Art',
+      workKicker: 'Selected projects / 2024—26',
+      workLine1: 'Work that',
+      workLine2: 'moves people.',
+      workText: 'A selection of visual identities, campaigns and art-led projects made with purpose.',
+      servicesKicker: 'What we do',
+      servicesLine1: 'Creative range.',
+      servicesLine2: 'One clear point of view.',
+      ctaKicker: 'Have something in mind?',
+      ctaLine1: "Let's make",
+      ctaLine2: 'something matter.',
+      ctaButton: 'Tell us about it',
+      aboutKicker: 'A little about us',
+      aboutLine1: 'Ideas with',
+      aboutLine2: 'character.',
+      aboutIntro: 'We are a creative studio bringing design, marketing and mural art together to make work with meaning.',
+      aboutImage: U + 'photo-1513364776144-60967b0f800f?w=1200',
+      aboutPoint: 'Our point of view',
+      aboutHeading1: 'Make it meaningful.',
+      aboutHeading2: 'Make it memorable.',
+      aboutText: 'We listen closely, think strategically and make with intention — because every detail is a chance to make a connection. From the first sketch to the final wall, we believe good creative work should make people feel something.',
+      servicesPageKicker: 'How we help',
+      servicesPageLine1: 'A creative toolkit',
+      servicesPageLine2: 'for ambitious ideas.',
+      servicesPageText: 'From first thought to final finish, we shape the pieces that make your brand distinct.',
+      worksKicker: 'The portfolio',
+      worksLine1: 'Selected work.',
+      worksLine2: 'Real-world impact.',
+      worksText: 'A mix of identities, campaigns, visual experiments and spaces transformed through art.',
+      videosKicker: 'Moving image',
+      videosLine1: 'Ideas in',
+      videosLine2: 'motion.',
+      videosText: 'Films, edits and moving-image stories from our creative projects.',
+      contactKicker: 'Start a conversation',
+      contactLine1: "Let's make",
+      contactLine2: 'something matter.',
+      contactText: 'Have a project, collaboration or idea? Tell us a little about it.',
+      contactHeading1: 'Have a good one',
+      contactHeading2: 'in mind?',
+      contactIntro: 'We would love to hear what you are working on. Reach out and let’s make something meaningful.',
+      email: 'hello@example.com',
+      phone: '',
+      location: 'Addis Ababa, Ethiopia',
+      instagram: '',
+      linkedin: '',
+      footerNote: 'Good ideas deserve to be seen.',
+    },
+    projects: [
+      { id: 'p1', slug: 'a-new-visual-language', title: 'A New Visual Language', category: 'Graphic Design', image: U + 'photo-1541701494587-cb58502866ab?w=1000', desc: 'A bold visual identity built to stand apart.', summary: 'A growing local brand needed to look as confident as it sounded.', body: 'We built a flexible identity system: logo, colour palette, typography and layout rules that work from business cards to billboards.', year: '2025', type: 'Brand identity', services: 'Logo design · Colour system · Typography · Brand guidelines', videoUrl: '', visible: true },
+      { id: 'p2', slug: 'culture-in-motion', title: 'Culture in Motion', category: 'Marketing', image: U + 'photo-1531058020387-3be344556be6?w=1000', desc: 'A campaign connecting people, place and ideas.', summary: 'A campaign to bring people, place and ideas together.', body: 'We developed the concept, the content plan and the visuals, then adapted them for social media, print and in-person events.', year: '2025', type: 'Campaign', services: 'Campaign concept · Content direction · Social media · Print', videoUrl: '', visible: true },
+      { id: 'p3', slug: 'walls-that-speak', title: 'Walls That Speak', category: 'Mural Art', image: U + 'photo-1549490349-8643362247b5?w=1000', desc: 'Public art that brings colour and energy to a space.', summary: 'A blank wall became a landmark for the neighbourhood.', body: 'Working with the community, we designed and painted a large-scale mural that reflects the stories of the people who live nearby.', year: '2024', type: 'Public mural', services: 'Mural design · Wall painting · Community workshops', videoUrl: '', visible: true },
+      { id: 'p4', slug: 'colour-studies', title: 'Colour Studies', category: 'Graphic Design', image: U + 'photo-1541961017774-22349e4a1262?w=1000', desc: 'An exploration of colour, shape and typography.', summary: 'An open exploration of colour, shape and typography.', body: 'A series of visual experiments that test how far colour and form can carry a message before words are needed.', year: '2024', type: 'Personal project', services: 'Art direction · Illustration · Typography', videoUrl: '', visible: true },
+      { id: 'p5', slug: 'street-stories', title: 'Street Stories', category: 'Mural Art', image: U + 'photo-1561214115-f2f134cc4912?w=1000', desc: 'Art inspired by the rhythm of the city.', summary: 'Art inspired by the rhythm of the city.', body: 'Figures, signs and everyday moments were turned into a painted street story that changes as you walk past it.', year: '2026', type: 'Public mural', services: 'Mural design · Environmental graphics · Wall painting', videoUrl: '', visible: true },
+      { id: 'p6', slug: 'the-big-idea', title: 'The Big Idea', category: 'Marketing', image: U + 'photo-1497366754035-f200968a6e72?w=1000', desc: 'Strategy and creative direction for a growing brand.', summary: 'Strategy and creative direction for a growing brand.', body: 'We clarified the brand’s message, set the creative direction, and gave the team a clear plan for what to make next.', year: '2026', type: 'Strategy', services: 'Brand strategy · Creative direction · Messaging', videoUrl: '', visible: true },
+    ],
+    videos: [
+      { id: 'v1', title: 'Sample video — replace me', category: 'Motion', description: 'A sample clip so you can see how videos look. Replace it in the admin with your own work.', url: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4', poster: '', visible: true },
+      { id: 'v2', title: 'Sample video 2 — replace me', category: 'Motion', description: 'Paste a YouTube or Vimeo link, or upload an MP4, from the admin dashboard.', url: 'https://www.w3schools.com/html/mov_bbb.mp4', poster: '', visible: true },
+    ],
+    services: [
+      { id: 's1', num: '01', tag: 'DESIGN', title: 'Graphic design', text: 'Visual identities, print, digital design, art direction and brand systems.', link: '#/graphic-design', visible: true },
+      { id: 's2', num: '02', tag: 'STRATEGY', title: 'Marketing', text: 'Campaign concepts, content direction, creative strategy and storytelling.', link: '#/marketing', visible: true },
+      { id: 's3', num: '03', tag: 'ART', title: 'Mural art', text: 'Custom murals, public art, environmental graphics and wall painting.', link: '#/mural-art', visible: true },
+    ],
+    // Which pages appear in the top menu.
+    nav: { about: true, services: true, works: true, graphic: true, marketing: true, mural: true, videos: true, contact: true },
+  };
+
+  // Fields shown in the admin "Site text" tab: [key, label, type]
+  window.SCHEMA = [
+    ['Brand & header', [
+      ['brandName', 'Brand name', 'text'], ['mark', 'Logo letters (2)', 'text'], ['tagline', 'Small text under name', 'text']]],
+    ['Home — top', [
+      ['eyebrow', 'Small line above title', 'text'], ['heroLine1', 'Title line 1', 'text'], ['heroLine2', 'Title line 2 (italic)', 'text'],
+      ['heroText', 'Intro paragraph', 'area'], ['stamp', 'Orange stamp text (one word per line)', 'area'], ['heroImage', 'Top image', 'image']]],
+    ['Home — black band', [
+      ['band1a', 'Word 1', 'text'], ['band1b', 'Word 1 (italic)', 'text'], ['band2a', 'Word 2', 'text'], ['band2b', 'Word 2 (italic)', 'text'],
+      ['band3a', 'Word 3', 'text'], ['band3b', 'Word 3 (italic)', 'text'], ['bandRight', 'Right-side text', 'text']]],
+    ['Home — sections', [
+      ['workKicker', 'Projects: small line', 'text'], ['workLine1', 'Projects: title line 1', 'text'], ['workLine2', 'Projects: title line 2', 'text'], ['workText', 'Projects: paragraph', 'area'],
+      ['servicesKicker', 'Services: small line', 'text'], ['servicesLine1', 'Services: title line 1', 'text'], ['servicesLine2', 'Services: title line 2', 'text'],
+      ['ctaKicker', 'Orange block: small line', 'text'], ['ctaLine1', 'Orange block: line 1', 'text'], ['ctaLine2', 'Orange block: line 2', 'text'], ['ctaButton', 'Orange block: button', 'text']]],
+    ['About page', [
+      ['aboutKicker', 'Small line', 'text'], ['aboutLine1', 'Title line 1', 'text'], ['aboutLine2', 'Title line 2', 'text'], ['aboutIntro', 'Intro', 'area'],
+      ['aboutImage', 'Photo', 'image'], ['aboutPoint', 'Section label', 'text'], ['aboutHeading1', 'Heading line 1', 'text'], ['aboutHeading2', 'Heading line 2', 'text'], ['aboutText', 'Main text', 'area']]],
+    ['Services page', [
+      ['servicesPageKicker', 'Small line', 'text'], ['servicesPageLine1', 'Title line 1', 'text'], ['servicesPageLine2', 'Title line 2', 'text'], ['servicesPageText', 'Intro', 'area']]],
+    ['Works page', [
+      ['worksKicker', 'Small line', 'text'], ['worksLine1', 'Title line 1', 'text'], ['worksLine2', 'Title line 2', 'text'], ['worksText', 'Intro', 'area']]],
+    ['Videos page', [
+      ['videosKicker', 'Small line', 'text'], ['videosLine1', 'Title line 1', 'text'], ['videosLine2', 'Title line 2', 'text'], ['videosText', 'Intro', 'area']]],
+    ['Contact page & footer', [
+      ['contactKicker', 'Small line', 'text'], ['contactLine1', 'Title line 1', 'text'], ['contactLine2', 'Title line 2', 'text'], ['contactText', 'Intro', 'area'],
+      ['contactHeading1', 'Heading line 1', 'text'], ['contactHeading2', 'Heading line 2', 'text'], ['contactIntro', 'Paragraph', 'area'],
+      ['email', 'Email', 'text'], ['phone', 'Phone (optional)', 'text'], ['location', 'Location', 'text'],
+      ['instagram', 'Instagram link (optional)', 'text'], ['linkedin', 'LinkedIn link (optional)', 'text'], ['footerNote', 'Footer note', 'text']]],
+  ];
+
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  // Only allow normal web links and our own uploads in src/href attributes.
+  const safeUrl = (u) => {
+    u = String(u || '').trim();
+    return /^(https?:\/\/|\/media\/|mailto:|#\/|tel:)/i.test(u) ? u : '';
+  };
+  const slugify = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'project';
+
+  // Turn a pasted video link into something we can show.
+  function videoInfo(url) {
+    url = String(url || '').trim();
+    let m = url.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/i);
+    if (m) return { kind: 'embed', src: 'https://www.youtube-nocookie.com/embed/' + m[1], thumb: 'https://img.youtube.com/vi/' + m[1] + '/hqdefault.jpg' };
+    m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/i);
+    if (m) return { kind: 'embed', src: 'https://player.vimeo.com/video/' + m[1], thumb: '' };
+    if (safeUrl(url) && /^https?:|^\/media\//i.test(url)) return { kind: 'file', src: url, thumb: '' };
+    return { kind: 'none', src: '', thumb: '' };
+  }
+
+  // Merge saved content over the defaults so new fields never break an older save.
+  function withDefaults(c) {
+    const d = JSON.parse(JSON.stringify(window.DEFAULTS));
+    if (!c) return d;
+    return {
+      site: Object.assign(d.site, c.site || {}),
+      projects: Array.isArray(c.projects) ? c.projects : d.projects,
+      videos: Array.isArray(c.videos) ? c.videos : d.videos,
+      services: Array.isArray(c.services) ? c.services : d.services,
+      nav: Object.assign(d.nav, c.nav || {}),
+    };
+  }
+
+  window.Util = { esc, safeUrl, slugify, videoInfo, withDefaults };
+})();
+</script>
+<script>/* Public website. Content comes from /api/content (edited in /admin), with built-in defaults as fallback. */
+(function () {
+  const { esc, safeUrl, videoInfo, withDefaults } = window.Util;
+  let D = withDefaults(null);
+
+  const L = (a, b) => `${esc(a)}${b ? '<br><em>' + esc(b) + '</em>' : ''}`;
+  const lines = (s) => esc(s).replace(/\n/g, '<br>');
+
+  function navItems() {
+    const n = D.nav;
+    return [['Home', '/', true], ['About', '/about', n.about], ['Services', '/services', n.services], ['Works', '/works', n.works],
+      ['Graphic Design', '/graphic-design', n.graphic], ['Marketing', '/marketing', n.marketing], ['Mural Art', '/mural-art', n.mural],
+      ['Videos', '/videos', n.videos], ['Contact', '/contact', n.contact]].filter((x) => x[2]);
+  }
+
+  function brand(small) {
+    const s = D.site;
+    const mark = String(s.mark || '');
+    const name = esc(s.brandName).replace(/\./g, '<i>.</i>');
+    return `<span class="brand-mark">${esc(mark.slice(0, 1))}<span>${esc(mark.slice(1))}</span></span><span>${name}<small>${esc(small || s.tagline)}</small></span>`;
+  }
+
+  function cards(list) {
+    if (!list.length) return '<div class="empty">No projects to show yet.</div>';
+    return `<div class="grid">${list.map((p, i) => `<a class="work" href="#/work/${esc(p.slug || p.id)}"><img src="${esc(safeUrl(p.image))}" alt="${esc(p.title)}" loading="lazy"><div class="work-meta"><div><small>${esc(p.category)}</small><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p></div><b>${String(i + 1).padStart(2, '0')} ↗</b></div></a>`).join('')}</div>`;
+  }
+
+  function pageHead(kicker, l1, l2, desc) {
+    return `<div class="page-head"><span class="eyebrow">${esc(kicker)}</span><h1>${L(l1, l2)}</h1>${desc ? `<p>${esc(desc)}</p>` : ''}</div>`;
+  }
+
+  function videoCard(v) {
+    const info = videoInfo(v.url);
+    let media = '<div class="empty">Video unavailable.</div>';
+    if (info.kind === 'embed') {
+      media = `<div class="vframe"><iframe src="${esc(info.src)}" title="${esc(v.title)}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`;
+    } else if (info.kind === 'file') {
+      const poster = safeUrl(v.poster);
+      media = `<div class="vframe"><video controls preload="metadata" playsinline ${poster ? `poster="${esc(poster)}"` : ''} src="${esc(info.src)}"></video></div>`;
+    }
+    return `<article class="video-card">${media}<div class="work-meta"><div><small>${esc(v.category || 'Video')}</small><h3>${esc(v.title)}</h3>${v.description ? `<p>${esc(v.description)}</p>` : ''}</div></div></article>`;
+  }
+  const videoGrid = (list) => `<div class="video-grid">${list.map(videoCard).join('')}</div>`;
+
+  function footer() {
+    const s = D.site;
+    const links = [s.instagram && ['Instagram', s.instagram], s.linkedin && ['LinkedIn', s.linkedin]].filter(Boolean)
+      .filter((l) => safeUrl(l[1])).map((l) => `<a href="${esc(l[1])}" target="_blank" rel="noopener">${l[0]}</a>`).join(' · ');
+    return `<div class="brand">${brand()}</div><div class="footer-right">${esc(s.location)}<br>${s.email ? `<a href="mailto:${esc(s.email)}">${esc(s.email)}</a><br>` : ''}${s.phone ? esc(s.phone) + '<br>' : ''}${links ? links + '<br>' : ''}© ${new Date().getFullYear()} ${esc(s.brandName)} · <a href="/admin" class="adminlink">Admin</a></div>`;
+  }
+
+  function home() {
+    const s = D.site;
+    const projects = D.projects;
+    const videos = D.videos.filter((v) => videoInfo(v.url).kind !== 'none');
+    const svc = D.services;
+    return `<section class="hero"><div><span class="eyebrow">${esc(s.eyebrow)}</span><h1>${L(s.heroLine1, s.heroLine2)}</h1><p>${esc(s.heroText)}</p><div class="actions"><a class="btn" href="#/works">Explore our work ↗</a><a class="textlink" href="#/about">Get to know us ↗</a></div></div><div class="hero-image"><img src="${esc(safeUrl(s.heroImage))}" alt=""><div class="stamp">${lines(s.stamp)}</div></div></section>
+<div class="band"><span class="eyebrow">We make</span><strong>${esc(s.band1a)} <em>${esc(s.band1b)}</em> ${esc(s.band2a)} <em>${esc(s.band2b)}</em> ${esc(s.band3a)} <em>${esc(s.band3b)}</em></strong><span class="eyebrow">${esc(s.bandRight)}</span></div>
+<section class="section"><div class="section-head"><div><span class="eyebrow">${esc(s.workKicker)}</span><h2>${L(s.workLine1, s.workLine2)}</h2></div><p>${esc(s.workText)}</p></div>${cards(projects.slice(0, 3))}</section>
+${videos.length ? `<section class="section vsec"><div class="section-head"><div><span class="eyebrow">Moving image</span><h2>Watch <em>the work.</em></h2></div><a class="textlink" href="#/videos">All videos ↗</a></div>${videoGrid(videos.slice(0, 2))}</section>` : ''}
+<section class="services"><div><span class="eyebrow">${esc(s.servicesKicker)}</span><h2>${L(s.servicesLine1, s.servicesLine2)}</h2></div><div class="service-list">${svc.map((x) => `<a href="${esc(safeUrl(x.link) || '#/services')}"><span>${esc(x.num)}</span> ${esc(x.title)} ↗</a>`).join('')}</div></section>
+<section class="cta-block"><span class="eyebrow">${esc(s.ctaKicker)}</span><h2>${L(s.ctaLine1, s.ctaLine2)}</h2><a class="btn dark" href="#/contact">${esc(s.ctaButton)} ↗</a></section>`;
+  }
+
+  function about() {
+    const s = D.site;
+    return `${pageHead(s.aboutKicker, s.aboutLine1, s.aboutLine2, s.aboutIntro)}<section class="page-content about-row"><img src="${esc(safeUrl(s.aboutImage))}" alt=""><div><span class="eyebrow">${esc(s.aboutPoint)}</span><h2>${L(s.aboutHeading1, s.aboutHeading2)}</h2><p>${esc(s.aboutText)}</p></div></section>`;
+  }
+
+  function services() {
+    const s = D.site;
+    return `${pageHead(s.servicesPageKicker, s.servicesPageLine1, s.servicesPageLine2, s.servicesPageText)}<section class="page-content service-cards">${D.services.map((x) => `<article class="service-card"><b>${esc(x.num)} / ${esc(x.tag)}</b><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></article>`).join('')}</section>`;
+  }
+
+  function works(path) {
+    const s = D.site;
+    const f = path === '/graphic-design' ? 'Graphic Design' : path === '/marketing' ? 'Marketing' : path === '/mural-art' ? 'Mural Art' : '';
+    const list = f ? D.projects.filter((p) => p.category === f) : D.projects;
+    const videos = !f ? D.videos.filter((v) => videoInfo(v.url).kind !== 'none') : [];
+    return `${pageHead(f || s.worksKicker, s.worksLine1, s.worksLine2, s.worksText)}<section class="page-content">${cards(list)}</section>${videos.length ? `<section class="page-content vsec2"><div class="section-head"><div><span class="eyebrow">Moving image</span><h2>Videos</h2></div><a class="textlink" href="#/videos">All videos ↗</a></div>${videoGrid(videos)}</section>` : ''}`;
+  }
+
+  function detail(path) {
+    const key = path.slice(6);
+    const list = D.projects;
+    const i = list.findIndex((p) => (p.slug || p.id) === key || p.id === key);
+    if (i < 0) return `${pageHead('404', 'Project not', 'found.')}<section class="page-content"><a class="btn" href="#/works">Back to works ↗</a></section>`;
+    const p = list[i], prev = list[(i + list.length - 1) % list.length], next = list[(i + 1) % list.length];
+    document.title = p.title + ' — ' + D.site.brandName;
+    const big = safeUrl(p.image).replace('w=1000', 'w=1800');
+    const vi = videoInfo(p.videoUrl);
+    return `<section class="detail-head"><a class="textlink" href="#/works">← All works</a><span class="eyebrow">${esc(p.category)}</span><h1>${esc(p.title)}</h1><p>${esc(p.summary)}</p></section><div class="detail-hero"><img src="${esc(big)}" alt="${esc(p.title)}" onerror="this.onerror=null;this.src='${esc(safeUrl(p.image))}'"></div>${vi.kind !== 'none' ? `<div class="detail-video">${videoCard({ title: p.title, url: p.videoUrl, category: 'Project film', description: '' })}</div>` : ''}<section class="detail-body"><dl class="detail-facts"><div><dt>Year</dt><dd>${esc(p.year)}</dd></div><div><dt>Category</dt><dd>${esc(p.category)}</dd></div><div><dt>Type</dt><dd>${esc(p.type)}</dd></div><div><dt>Services</dt><dd>${esc(p.services)}</dd></div></dl><div class="detail-text"><span class="eyebrow">The project</span><h2>${esc(p.desc)}</h2><p>${esc(p.body)}</p><a class="btn" href="#/contact">Start a similar project ↗</a></div></section>${list.length > 1 ? `<section class="detail-nav"><a href="#/work/${esc(prev.slug || prev.id)}"><small>← Previous</small><b>${esc(prev.title)}</b></a><a href="#/work/${esc(next.slug || next.id)}"><small>Next →</small><b>${esc(next.title)}</b></a></section>` : ''}`;
+  }
+
+  function videos() {
+    const s = D.site;
+    const list = D.videos.filter((v) => videoInfo(v.url).kind !== 'none');
+    return `${pageHead(s.videosKicker, s.videosLine1, s.videosLine2, s.videosText)}<section class="page-content">${list.length ? videoGrid(list) : '<div class="empty">Videos are coming soon.</div>'}</section>`;
+  }
+
+  function contact() {
+    const s = D.site;
+    const info = `<p><b>Location</b><br>${esc(s.location)}</p>${s.email ? `<p><b>Email</b><br><a href="mailto:${esc(s.email)}">${esc(s.email)}</a></p>` : ''}${s.phone ? `<p><b>Phone</b><br>${esc(s.phone)}</p>` : ''}`;
+    return `${pageHead(s.contactKicker, s.contactLine1, s.contactLine2, s.contactText)}<section class="page-content contact"><div><h2>${L(s.contactHeading1, s.contactHeading2)}</h2><p>${esc(s.contactIntro)}</p>${info}</div><form id="cform"><input name="name" placeholder="Your name" required maxlength="120"><input name="email" type="email" placeholder="Email address" required maxlength="160"><input name="subject" placeholder="Project or subject" maxlength="200"><input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><textarea name="message" placeholder="Tell us about your idea..." required maxlength="4000"></textarea><button class="btn" type="submit">Send enquiry ↗</button><p class="notice" id="formnotice"></p></form></section>`;
+  }
+
+  function wireContact() {
+    const f = document.getElementById('cform');
+    if (!f) return;
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const note = document.getElementById('formnotice');
+      const btn = f.querySelector('button');
+      const data = Object.fromEntries(new FormData(f).entries());
+      btn.disabled = true; note.textContent = 'Sending…';
+      try {
+        const r = await fetch('/api/contact', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) });
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok) throw new Error(j.error || 'failed');
+        f.reset(); note.textContent = 'Thank you! Your message has been sent.';
+      } catch (err) {
+        const em = D.site.email;
+        if (em && location.protocol === 'file:') {
+          location.href = 'mailto:' + em + '?subject=' + encodeURIComponent(data.subject || '') + '&body=' + encodeURIComponent((data.message || '') + '\n\nFrom: ' + data.name + ' (' + data.email + ')');
+        } else note.textContent = err.message && err.message !== 'failed' ? err.message : 'Sorry, something went wrong. Please email us directly.';
+      }
+      btn.disabled = false;
+    });
+  }
+
+  function render() {
+    const path = location.hash.replace(/^#/, '') || '/';
+    document.title = D.site.brandName + ' — ' + 'Creative Studio';
+    let html;
+    if (path === '/') html = home();
+    else if (path === '/about') html = about();
+    else if (path === '/services') html = services();
+    else if (['/works', '/graphic-design', '/marketing', '/mural-art'].includes(path)) html = works(path);
+    else if (path.startsWith('/work/')) html = detail(path);
+    else if (path === '/videos') html = videos();
+    else if (path === '/contact') html = contact();
+    else html = `${pageHead('404', 'Page not', 'found.')}<section class="page-content"><a class="btn" href="#/">Back home ↗</a></section>`;
+
+    document.getElementById('hdr').innerHTML = `<a class="brand" href="#/">${brand()}</a><button class="menu" aria-label="Open menu">☰</button><nav id="nav">${navItems().map(([n, p]) => `<a href="#${p}" class="${path === p || (p === '/works' && path.startsWith('/work/')) ? 'active' : ''}">${n}</a>`).join('')}</nav><a class="cta" href="#/contact">Start a project ↗</a>`;
+    document.querySelector('#hdr .menu').onclick = () => document.getElementById('nav').classList.toggle('open');
+    document.getElementById('app').innerHTML = html;
+    document.getElementById('ftr').innerHTML = footer();
+    wireContact();
+    window.scrollTo(0, 0);
+  }
+
+  async function boot() {
+    if (location.protocol !== 'file:') {
+      try {
+        const ctl = new AbortController();
+        const t = setTimeout(() => ctl.abort(), 4000);
+        const r = await fetch('/api/content', { signal: ctl.signal, cache: 'no-store' });
+        clearTimeout(t);
+        if (r.ok) D = withDefaults((await r.json()).content);
+      } catch (e) { /* use defaults */ }
+    }
+    window.addEventListener('hashchange', render);
+    render();
+  }
+  boot();
+})();
+</script>
 </body></html>
