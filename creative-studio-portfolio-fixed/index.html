@@ -201,9 +201,13 @@ form.cform{display:grid;gap:18px}
 .f-cols a{display:block;width:fit-content}
 .f-base{margin-top:48px;font-family:var(--display);font-size:14px;color:rgba(245,238,220,.65)}
 
+.f-admin{text-decoration:underline;text-underline-offset:3px;color:rgba(245,238,220,.9);font-weight:700}
+.f-admin:hover{color:var(--orange)}
+
 /* responsive */
 @media(max-width:1020px){
-  .primary-nav,.hdr-actions .btn,.hdr-actions .admin-pill{display:none}
+  .primary-nav,.hdr-actions .btn{display:none}
+  .hdr-actions .admin-pill{padding:8px 12px;font-size:13px}
   .menu-btn{display:block}
   .sheet{position:fixed;inset:0;top:0;z-index:60;background:var(--plaster);padding:calc(var(--hdr) + 12px) var(--pad) 40px;overflow:auto;transform:translateY(-102%);visibility:hidden;transition:transform .45s cubic-bezier(.7,0,.2,1),visibility 0s .45s;display:flex;flex-direction:column;gap:4px}
   .sheet.open{transform:none;visibility:visible;transition:transform .45s cubic-bezier(.7,0,.2,1)}
@@ -527,7 +531,7 @@ ${list.length > 1 ? `<nav class="d-nav" aria-label="More projects"><a href="#/wo
   function footer() {
     const s = D.site;
     const soc = [['Instagram', s.instagram], ['LinkedIn', s.linkedin]].filter((l) => l[1] && safeUrl(l[1]));
-    return `<div class="wrap"><p class="f-big">${esc(s.brandName)}</p><div class="f-cols"><div><h4>Say hello</h4>${s.email ? `<a href="mailto:${esc(s.email)}">${esc(s.email)}</a>` : ''}${s.phone ? `<span>${esc(s.phone)}</span><br>` : ''}<span>${esc(s.location)}</span></div><div><h4>Pages</h4>${NAV().map(([n, p]) => `<a href="#${p}">${n}</a>`).join('')}</div><div>${soc.length ? `<h4>Elsewhere</h4>${soc.map((l) => `<a href="${esc(l[1])}" target="_blank" rel="noopener">${l[0]}</a>`).join('')}` : `<h4>Studio</h4><span>${esc(s.footerNote)}</span>`}</div></div><p class="f-base">© ${new Date().getFullYear()} ${esc(s.brandName)}${soc.length && s.footerNote ? '. ' + esc(s.footerNote) : ''}</p></div>`;
+    return `<div class="wrap"><p class="f-big">${esc(s.brandName)}</p><div class="f-cols"><div><h4>Say hello</h4>${s.email ? `<a href="mailto:${esc(s.email)}">${esc(s.email)}</a>` : ''}${s.phone ? `<span>${esc(s.phone)}</span><br>` : ''}<span>${esc(s.location)}</span></div><div><h4>Pages</h4>${NAV().map(([n, p]) => `<a href="#${p}">${n}</a>`).join('')}</div><div>${soc.length ? `<h4>Elsewhere</h4>${soc.map((l) => `<a href="${esc(l[1])}" target="_blank" rel="noopener">${l[0]}</a>`).join('')}` : `<h4>Studio</h4><span>${esc(s.footerNote)}</span>`}</div></div><p class="f-base"><a class="f-admin" href="/admin">Admin</a> · © ${new Date().getFullYear()} ${esc(s.brandName)}${soc.length && s.footerNote ? '. ' + esc(s.footerNote) : ''}</p></div>`;
   }
 
   /* ---------- shell ---------- */
