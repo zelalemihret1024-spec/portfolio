@@ -1,6 +1,6 @@
 # Zelalem.M — Website + Admin
 
-- `public/`       the website (index.html, app.js, shared.js) and the admin page (admin.html)
+- `public/`       the website (index.html) and the admin page (admin.html) — each is one self-contained file
 - `worker.js`     the small server: login, saving content, uploads, contact messages
 - `wrangler.toml` Cloudflare settings (includes the storage the admin needs)
 - `react-app/`    old optional React/Supabase version — not used, ignore it
@@ -13,7 +13,8 @@
    - Deploy command: `npx wrangler deploy`
 3. After the deploy finishes, set your password:
    Worker → Settings → Variables and Secrets → Add → Type **Secret**,
-   Name `ADMIN_PASSWORD`, Value = your password (long, not used anywhere else) → Deploy.
+   Name `ADMIN_PASSWORD`, Value = your password (long, not used anywhere else).
+   Add a second **Secret**: Name `ADMIN_EMAIL`, Value = your admin email. Only this email + password can sign in. → Deploy.
 4. Open `https://YOUR-SITE/admin` and sign in.
 
 If the first deploy complains about the `CONTENT` KV namespace:
