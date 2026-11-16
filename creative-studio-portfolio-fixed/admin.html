@@ -117,13 +117,13 @@ code{background:var(--sand);padding:1px 5px}
   const U = 'https://images.unsplash.com/';
   window.DEFAULTS = {
     site: {
-      brandName: 'ZELALEM.M',
+      brandName: 'Zelalem.M',
       mark: 'ZM',
-      tagline: 'CREATIVE STUDIO',
+      tagline: 'Creative studio, Addis Ababa',
       eyebrow: 'Independent creative studio · Addis Ababa',
       heroLine1: 'Make it',
       heroLine2: 'matter.',
-      heroText: 'We build bold brands, thoughtful campaigns and art-filled spaces. Strategy, design and creativity — all under one roof.',
+      heroText: 'Graphic design, marketing and mural art for brands and places that want to be noticed.',
       stamp: 'MAKE\nIT\nMATTER.',
       heroImage: U + 'photo-1513364776144-60967b0f800f?w=1200',
       band1a: 'Brands', band1b: 'bold.',
@@ -155,9 +155,9 @@ code{background:var(--sand);padding:1px 5px}
       servicesPageLine2: 'for ambitious ideas.',
       servicesPageText: 'From first thought to final finish, we shape the pieces that make your brand distinct.',
       worksKicker: 'The portfolio',
-      worksLine1: 'Selected work.',
-      worksLine2: 'Real-world impact.',
-      worksText: 'A mix of identities, campaigns, visual experiments and spaces transformed through art.',
+      worksLine1: 'Selected work,',
+      worksLine2: 'on walls and screens.',
+      worksText: 'Identities, campaigns, murals and films. Pick a category to see its projects and videos together.',
       videosKicker: 'Moving image',
       videosLine1: 'Ideas in',
       videosLine2: 'motion.',
@@ -185,8 +185,8 @@ code{background:var(--sand);padding:1px 5px}
       { id: 'p6', slug: 'the-big-idea', title: 'The Big Idea', category: 'Marketing', image: U + 'photo-1497366754035-f200968a6e72?w=1000', desc: 'Strategy and creative direction for a growing brand.', summary: 'Strategy and creative direction for a growing brand.', body: 'We clarified the brand’s message, set the creative direction, and gave the team a clear plan for what to make next.', year: '2026', type: 'Strategy', services: 'Brand strategy · Creative direction · Messaging', videoUrl: '', visible: true },
     ],
     videos: [
-      { id: 'v1', title: 'Sample video — replace me', category: 'Motion', description: 'A sample clip so you can see how videos look. Replace it in the admin with your own work.', url: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4', poster: '', visible: true },
-      { id: 'v2', title: 'Sample video 2 — replace me', category: 'Motion', description: 'Paste a YouTube or Vimeo link, or upload an MP4, from the admin dashboard.', url: 'https://www.w3schools.com/html/mov_bbb.mp4', poster: '', visible: true },
+      { id: 'v1', title: 'Sample video — replace me', category: 'Mural Art', description: 'A sample clip so you can see how videos look. Replace it in the admin with your own work.', url: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4', poster: '', visible: true },
+      { id: 'v2', title: 'Sample video 2 — replace me', category: 'Marketing', description: 'Paste a YouTube or Vimeo link, or upload an MP4, from the admin dashboard.', url: 'https://www.w3schools.com/html/mov_bbb.mp4', poster: '', visible: true },
     ],
     services: [
       { id: 's1', num: '01', tag: 'DESIGN', title: 'Graphic design', text: 'Visual identities, print, digital design, art direction and brand systems.', link: '#/graphic-design', visible: true },
@@ -194,35 +194,32 @@ code{background:var(--sand);padding:1px 5px}
       { id: 's3', num: '03', tag: 'ART', title: 'Mural art', text: 'Custom murals, public art, environmental graphics and wall painting.', link: '#/mural-art', visible: true },
     ],
     // Which pages appear in the top menu.
-    nav: { about: true, services: true, works: true, graphic: true, marketing: true, mural: true, videos: true, contact: true },
+    nav: { about: true, services: true, works: true, contact: true },
   };
 
   // Fields shown in the admin "Site text" tab: [key, label, type]
   window.SCHEMA = [
     ['Brand & header', [
-      ['brandName', 'Brand name', 'text'], ['mark', 'Logo letters (2)', 'text'], ['tagline', 'Small text under name', 'text']]],
+      ['brandName', 'Brand name', 'text'], ['mark', 'Logo letters (2)', 'text'], ['tagline', 'Small text under the name', 'text']]],
     ['Home — top', [
-      ['eyebrow', 'Small line above title', 'text'], ['heroLine1', 'Title line 1', 'text'], ['heroLine2', 'Title line 2 (italic)', 'text'],
-      ['heroText', 'Intro paragraph', 'area'], ['stamp', 'Orange stamp text (one word per line)', 'area'], ['heroImage', 'Top image', 'image']]],
-    ['Home — black band', [
-      ['band1a', 'Word 1', 'text'], ['band1b', 'Word 1 (italic)', 'text'], ['band2a', 'Word 2', 'text'], ['band2b', 'Word 2 (italic)', 'text'],
-      ['band3a', 'Word 3', 'text'], ['band3b', 'Word 3 (italic)', 'text'], ['bandRight', 'Right-side text', 'text']]],
+      ['heroLine1', 'Headline, line 1', 'text'], ['heroLine2', 'Headline, line 2', 'text'],
+      ['heroText', 'Intro paragraph', 'area'], ['heroImage', 'Top image', 'image']]],
+    ['Home — statement band', [
+      ['band1a', 'Word 1', 'text'], ['band1b', 'Word 1 ending', 'text'], ['band2a', 'Word 2', 'text'], ['band2b', 'Word 2 ending', 'text'],
+      ['band3a', 'Word 3', 'text'], ['band3b', 'Word 3 ending', 'text']]],
     ['Home — sections', [
-      ['workKicker', 'Projects: small line', 'text'], ['workLine1', 'Projects: title line 1', 'text'], ['workLine2', 'Projects: title line 2', 'text'], ['workText', 'Projects: paragraph', 'area'],
-      ['servicesKicker', 'Services: small line', 'text'], ['servicesLine1', 'Services: title line 1', 'text'], ['servicesLine2', 'Services: title line 2', 'text'],
-      ['ctaKicker', 'Orange block: small line', 'text'], ['ctaLine1', 'Orange block: line 1', 'text'], ['ctaLine2', 'Orange block: line 2', 'text'], ['ctaButton', 'Orange block: button', 'text']]],
+      ['workLine1', 'Selected work: title line 1', 'text'], ['workLine2', 'Selected work: title line 2', 'text'], ['workText', 'Selected work: paragraph', 'area'],
+      ['servicesLine1', 'Services: title line 1', 'text'], ['servicesLine2', 'Services: title line 2', 'text'],
+      ['ctaLine1', 'Contact block: line 1', 'text'], ['ctaLine2', 'Contact block: line 2', 'text'], ['ctaButton', 'Contact block: button', 'text']]],
     ['About page', [
-      ['aboutKicker', 'Small line', 'text'], ['aboutLine1', 'Title line 1', 'text'], ['aboutLine2', 'Title line 2', 'text'], ['aboutIntro', 'Intro', 'area'],
-      ['aboutImage', 'Photo', 'image'], ['aboutPoint', 'Section label', 'text'], ['aboutHeading1', 'Heading line 1', 'text'], ['aboutHeading2', 'Heading line 2', 'text'], ['aboutText', 'Main text', 'area']]],
+      ['aboutLine1', 'Title line 1', 'text'], ['aboutLine2', 'Title line 2', 'text'], ['aboutIntro', 'Intro', 'area'],
+      ['aboutImage', 'Photo', 'image'], ['aboutHeading1', 'Heading line 1', 'text'], ['aboutHeading2', 'Heading line 2', 'text'], ['aboutText', 'Main text', 'area']]],
     ['Services page', [
-      ['servicesPageKicker', 'Small line', 'text'], ['servicesPageLine1', 'Title line 1', 'text'], ['servicesPageLine2', 'Title line 2', 'text'], ['servicesPageText', 'Intro', 'area']]],
-    ['Works page', [
-      ['worksKicker', 'Small line', 'text'], ['worksLine1', 'Title line 1', 'text'], ['worksLine2', 'Title line 2', 'text'], ['worksText', 'Intro', 'area']]],
-    ['Videos page', [
-      ['videosKicker', 'Small line', 'text'], ['videosLine1', 'Title line 1', 'text'], ['videosLine2', 'Title line 2', 'text'], ['videosText', 'Intro', 'area']]],
+      ['servicesPageLine1', 'Title line 1', 'text'], ['servicesPageLine2', 'Title line 2', 'text'], ['servicesPageText', 'Intro', 'area']]],
+    ['Work page', [
+      ['worksLine1', 'Title line 1', 'text'], ['worksLine2', 'Title line 2', 'text'], ['worksText', 'Intro', 'area']]],
     ['Contact page & footer', [
-      ['contactKicker', 'Small line', 'text'], ['contactLine1', 'Title line 1', 'text'], ['contactLine2', 'Title line 2', 'text'], ['contactText', 'Intro', 'area'],
-      ['contactHeading1', 'Heading line 1', 'text'], ['contactHeading2', 'Heading line 2', 'text'], ['contactIntro', 'Paragraph', 'area'],
+      ['contactLine1', 'Title line 1', 'text'], ['contactLine2', 'Title line 2', 'text'], ['contactText', 'Intro', 'area'],
       ['email', 'Email', 'text'], ['phone', 'Phone (optional)', 'text'], ['location', 'Location', 'text'],
       ['instagram', 'Instagram link (optional)', 'text'], ['linkedin', 'LinkedIn link (optional)', 'text'], ['footerNote', 'Footer note', 'text']]],
   ];
@@ -360,10 +357,10 @@ function projectsView(){
 }
 function videosView(){
   const list=C.videos;
-  return `<p class="lead">Videos appear on the Videos page, the Works page and the home page. Paste a YouTube or Vimeo link, or upload an MP4 (up to 24 MB).</p>
+  return `${datalists}<p class="lead">Each video shows inside the category you pick (Graphic Design, Marketing or Mural Art) on the Work page, and in “All”. Paste a YouTube or Vimeo link, or upload an MP4 (up to 24 MB).</p>
   <button class="btn" data-act="add" data-key="videos" style="margin-bottom:18px">+ Add video</button>
   ${list.length?list.map((v,i)=>{const info=videoInfo(v.url);const th=v.poster||info.thumb;return `<div class="item ${v.visible===false?'hidden-item':''}"><div class="row">${th?`<img class="thumb" src="${esc(th)}" alt="" onerror="this.style.visibility='hidden'">`:'<div class="thumb ph">▶ Video</div>'}<div class="t"><b>${esc(v.title)||'Untitled'}${v.visible===false?'<span class="badge hide">Hidden</span>':''}</b><small>${esc(v.category)} · ${info.kind==='embed'?'YouTube/Vimeo':info.kind==='file'?'Video file':'No valid link'}</small></div>${toolbar(list,i,'videos')}</div>
-  ${open==='videos'+i?`<div class="edit">${field(`videos.${i}.title`,'Title')}${field(`videos.${i}.category`,'Label (e.g. Motion, Campaign)')}${field(`videos.${i}.url`,'Video','video')}${field(`videos.${i}.poster`,'Cover image (optional, for uploaded files)','image',{full:true})}${field(`videos.${i}.description`,'Description','area',{full:true})}</div>`:''}</div>`}).join(''):'<div class="empty">No videos yet. Click “Add video”.</div>'}`;
+  ${open==='videos'+i?`<div class="edit">${field(`videos.${i}.title`,'Title')}${field(`videos.${i}.category`,'Category (the video shows inside it)','cat')}${field(`videos.${i}.url`,'Video','video')}${field(`videos.${i}.poster`,'Cover image (optional, for uploaded files)','image',{full:true})}${field(`videos.${i}.description`,'Description','area',{full:true})}</div>`:''}</div>`}).join(''):'<div class="empty">No videos yet. Click “Add video”.</div>'}`;
 }
 function servicesView(){
   const list=C.services;
@@ -377,8 +374,8 @@ function siteView(){
   window.SCHEMA.map(([g,fields])=>`<div class="group">${esc(g)}</div><div class="card"><div class="grid2">${fields.map(([k,l,t])=>field('site.'+k,l,t,{full:t==='area'||t==='image'})).join('')}</div></div>`).join('');
 }
 function menuView(){
-  const names={about:'About',services:'Services',works:'Works',graphic:'Graphic Design',marketing:'Marketing',mural:'Mural Art',videos:'Videos',contact:'Contact'};
-  return `<p class="lead">Choose which pages appear in the top menu. (Hidden pages are still reachable by direct link.)</p><div class="card">${Object.keys(names).map(k=>`<label class="chk"><input type="checkbox" data-path="nav.${k}" data-bool="1" ${C.nav[k]!==false?'checked':''}> ${names[k]}</label>`).join('')}</div>
+  const names={about:'About',services:'Services',works:'Work (projects and videos)',contact:'Contact'};
+  return `<p class="lead">Choose which pages appear in the menu. (Hidden pages are still reachable by direct link.)</p><div class="card">${Object.keys(names).map(k=>`<label class="chk"><input type="checkbox" data-path="nav.${k}" data-bool="1" ${C.nav[k]!==false?'checked':''}> ${names[k]}</label>`).join('')}</div>
   <div class="group">Start over</div><div class="card"><p style="margin-top:0">Put all text, projects, videos and services back to the original sample content. Nothing changes on the website until you click <b>Save changes</b>.</p><button class="btn danger small" data-act="reset">Reset everything to the original</button></div>
   <div class="group">Password</div><div class="card"><p style="margin:0">Your password is stored safely in Cloudflare as the secret <code>ADMIN_PASSWORD</code>. To change it: Cloudflare → your Worker → Settings → Variables and Secrets → edit it.</p></div>`;
 }
