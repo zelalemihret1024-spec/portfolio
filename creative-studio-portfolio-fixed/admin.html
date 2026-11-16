@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin — Zelalem.M</title>
+<style>
+:root{--ink:#111;--cream:#f5eedc;--sand:#e8dfcc;--orange:#f58220;--muted:#6d665a;--line:rgba(17,17,17,.16);--ok:#1f7a3d;--bad:#b3261e}
+*{box-sizing:border-box}html,body{margin:0}body{background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.45}
+a{color:inherit}button{font:inherit;cursor:pointer}[hidden]{display:none!important}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;background:var(--orange);color:#111;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding:12px 16px;text-decoration:none}
+.btn:hover{filter:brightness(.95)}.btn:disabled{opacity:.5;cursor:default}
+.btn.dark{background:var(--ink);color:var(--cream)}.btn.ghost{background:transparent;border:1px solid var(--ink);color:var(--ink)}.btn.small{padding:8px 11px;font-size:11px}.btn.danger{background:var(--bad);color:#fff}
+input,textarea,select{width:100%;font:inherit;padding:11px 12px;border:1px solid rgba(17,17,17,.3);background:#fffdf7;color:var(--ink);border-radius:0}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--orange);outline-offset:0}
+textarea{min-height:84px;resize:vertical}
+label.f{display:block;margin:0 0 14px}label.f>span{display:block;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.eyebrow{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}.eyebrow:before{content:'';display:inline-block;width:8px;height:8px;background:var(--orange);border-radius:50%;margin-right:10px}
+
+/* login */
+.login{min-height:100vh;display:grid;place-items:center;padding:20px}
+.login-card{background:#fffdf7;border:1px solid var(--line);padding:34px;width:100%;max-width:420px}
+.login-card h1{font-size:44px;line-height:.95;letter-spacing:-.06em;margin:16px 0 8px}.login-card h1 em{font-family:Georgia,serif;font-weight:400}
+.login-card p{color:var(--muted);margin:0 0 20px}
+.msg{padding:12px 14px;margin:14px 0 0;font-size:14px;background:#fbe9e7;color:var(--bad);border-left:4px solid var(--bad)}
+.msg.ok{background:#e6f4ea;color:var(--ok);border-color:var(--ok)}.msg.info{background:var(--sand);color:var(--ink);border-color:var(--orange)}
+
+/* app shell */
+.shell{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+.side{background:var(--ink);color:var(--cream);padding:22px 16px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:6px}
+.side .logo{font-weight:900;letter-spacing:.04em;margin:0 6px 18px;display:flex;align-items:center;gap:10px}
+.side .logo b{border:2px solid var(--cream);padding:5px 7px;font-size:18px}.side .logo b span{color:var(--orange)}
+.side .logo small{display:block;font-size:8px;letter-spacing:.25em;color:#bdb4a4;margin-top:3px}
+.tab{background:none;border:0;color:#d8d0bf;text-align:left;padding:11px 12px;font-weight:700;font-size:13px;letter-spacing:.02em;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tab:hover{background:rgba(255,255,255,.07)}.tab.on{background:var(--orange);color:#111}
+.tab i{font-style:normal;font-size:11px;background:rgba(255,255,255,.15);padding:2px 7px;border-radius:9px}.tab.on i{background:rgba(0,0,0,.15)}
+.side .spacer{flex:1}
+.main{padding:0 0 80px;min-width:0}
+.topbar{position:sticky;top:0;z-index:5;background:rgba(245,238,220,.97);border-bottom:1px solid var(--line);padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.topbar h1{margin:0;font-size:26px;letter-spacing:-.04em}
+.topbar .acts{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.dirty{font-size:12px;font-weight:700;color:var(--muted)}.dirty.on{color:var(--bad)}
+.content{padding:26px 28px;max-width:980px}
+.lead{color:var(--muted);margin:0 0 22px;max-width:640px}
+
+/* item cards */
+.item{background:#fffdf7;border:1px solid var(--line);margin-bottom:12px}
+.item.hidden-item{opacity:.6}
+.row{display:flex;align-items:center;gap:14px;padding:12px 14px}
+.thumb{width:76px;height:54px;object-fit:cover;background:#ddd;flex:none;display:block}
+.thumb.ph{display:grid;place-items:center;font-size:11px;color:var(--muted);text-align:center}
+.row .t{flex:1;min-width:0}.row .t b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.row .t small{color:var(--muted);font-size:12px}
+.row .btns{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.ib{background:none;border:1px solid var(--line);padding:8px 10px;font-size:12px;font-weight:700;min-width:36px}
+.ib:hover{border-color:var(--ink)}.ib.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}.ib.red:hover{background:var(--bad);color:#fff;border-color:var(--bad)}
+.badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;background:var(--sand);margin-left:6px;vertical-align:middle}
+.badge.hide{background:#f3d6d2;color:var(--bad)}
+.edit{border-top:1px solid var(--line);padding:18px 14px 6px;display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.edit .full{grid-column:1/-1}
+.imgfield{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}.imgfield input[type=text]{flex:1;min-width:180px}
+.imgfield .pv{width:100%;max-width:240px;max-height:150px;object-fit:cover;display:block;margin-top:8px;background:#ddd}
+.group{margin:30px 0 12px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.card{background:#fffdf7;border:1px solid var(--line);padding:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.chk{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-weight:700}.chk input{width:20px;height:20px;accent-color:var(--orange)}
+.msgbox{background:#fffdf7;border:1px solid var(--line);padding:16px;margin-bottom:12px}.msgbox h4{margin:0 0 4px;font-size:16px}.msgbox small{color:var(--muted)}.msgbox p{white-space:pre-wrap;margin:10px 0}
+.media{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.mi{background:#fffdf7;border:1px solid var(--line);padding:8px;font-size:12px}.mi img,.mi video{width:100%;height:110px;object-fit:cover;display:block;background:#ddd;margin-bottom:8px}
+.empty{padding:26px;background:var(--sand);color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--cream);padding:13px 20px;font-weight:700;z-index:50;max-width:92vw}.toast.bad{background:var(--bad)}
+.hint{font-size:12px;color:var(--muted);margin:-8px 0 14px}
+code{background:var(--sand);padding:1px 5px}
+
+@media(max-width:860px){
+ .shell{grid-template-columns:1fr}.side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;padding:12px}.side .logo{width:100%;margin-bottom:6px}.side .spacer{display:none}
+ .tab{padding:9px 11px}.topbar{padding:12px 16px}.content{padding:20px 16px}.edit,.grid2{grid-template-columns:1fr}.row{flex-wrap:wrap}.row .btns{width:100%;justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<div id="login" class="login" hidden>
+  <form class="login-card" id="loginForm">
+    <span class="eyebrow">Private area</span>
+    <h1>Admin <em>login.</em></h1>
+    <p>Sign in to edit your website.</p>
+    <label class="f"><span>Password</span><input type="password" id="pw" autocomplete="current-password" required autofocus></label>
+    <button class="btn" id="loginBtn">Sign in ↗</button>
+    <div id="loginMsg"></div>
+    <p style="margin:18px 0 0"><a href="/">← Back to website</a></p>
+  </form>
+</div>
+
+<div id="app" class="shell" hidden>
+  <aside class="side">
+    <div class="logo"><b>Z<span>M</span></b><span>ADMIN<small>CONTROL PANEL</small></span></div>
+    <div id="tabs"></div>
+    <div class="spacer"></div>
+    <a class="tab" href="/" target="_blank" rel="noopener">View website ↗</a>
+    <button class="tab" id="logout">Sign out</button>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <h1 id="title"></h1>
+      <div class="acts"><span class="dirty" id="dirty"></span><button class="btn" id="save">Save changes</button></div>
+    </div>
+    <div class="content" id="view"></div>
+  </main>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="/shared.js"></script>
+<script>
+(function(){
+const {esc,slugify,withDefaults,videoInfo}=window.Util;
+const $=s=>document.querySelector(s);
+let C=null, tab='projects', open=null, dirty=false, messages=null, media=null;
+
+const api=async(path,opts={})=>{
+  const o={credentials:'same-origin',...opts,headers:{'x-admin':'1',...(opts.headers||{})}};
+  const r=await fetch(path,o);
+  let j={};try{j=await r.json()}catch{}
+  if(r.status===401&&C){showLogin();throw new Error('Session ended. Please sign in again.')}
+  if(!r.ok)throw new Error(j.error||('Error '+r.status));
+  return j;
+};
+function toast(t,bad){const e=$('#toast');e.textContent=t;e.className='toast'+(bad?' bad':'');e.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>e.hidden=true,bad?5000:2200)}
+function setDirty(v){dirty=v;const d=$('#dirty');d.textContent=v?'● Unsaved changes':'All saved';d.className='dirty'+(v?' on':'')}
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
+
+/* ---------- login ---------- */
+function showLogin(msg){C=null;$('#app').hidden=true;$('#login').hidden=false;if(msg)$('#loginMsg').innerHTML='<div class="msg">'+esc(msg)+'</div>'}
+$('#loginForm').addEventListener('submit',async e=>{
+  e.preventDefault();const b=$('#loginBtn');b.disabled=true;$('#loginMsg').innerHTML='';
+  try{await api('/api/login',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({password:$('#pw').value})});$('#pw').value='';await start()}
+  catch(err){$('#loginMsg').innerHTML='<div class="msg">'+esc(err.message)+'</div>'}
+  b.disabled=false;
+});
+$('#logout').onclick=async()=>{if(dirty&&!confirm('You have unsaved changes. Sign out anyway?'))return;setDirty(false);await fetch('/api/logout',{method:'POST',headers:{'x-admin':'1'}});showLogin()};
+
+async function start(){
+  const s=await fetch('/api/session',{credentials:'same-origin'}).then(r=>r.json()).catch(()=>({}));
+  if(!s.admin){
+    $('#login').hidden=false;$('#app').hidden=true;
+    if(s.configured===false)$('#loginMsg').innerHTML='<div class="msg info"><b>One setup step left.</b> Add a secret called <code>ADMIN_PASSWORD</code> in Cloudflare (Worker → Settings → Variables and Secrets), then redeploy and refresh this page.</div>';
+    return;
+  }
+  const j=await api('/api/admin/content');
+  C=withDefaults(j.content);
+  $('#login').hidden=true;$('#app').hidden=false;
+  setDirty(false);
+  render();
+}
+
+/* ---------- helpers ---------- */
+function setPath(obj,path,val){const p=path.split('.');let o=obj;for(let i=0;i<p.length-1;i++)o=o[p[i]];o[p[p.length-1]]=val}
+function getPath(obj,path){return path.split('.').reduce((o,k)=>o&&o[k],obj)}
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,5);
+
+function field(path,label,type='text',opts={}){
+  const v=getPath(C,path);
+  const lab=`<span>${esc(label)}</span>`;
+  if(type==='area')return `<label class="f ${opts.full?'full':''}">${lab}<textarea data-path="${path}">${esc(v)}</textarea></label>`;
+  if(type==='image')return `<div class="f ${opts.full?'full':''}">${lab}<div class="imgfield"><input type="text" data-path="${path}" value="${esc(v)}" placeholder="Paste an image link, or upload →"><label class="btn small ghost" style="cursor:pointer">Upload<input type="file" accept="image/*" hidden data-upload="${path}" data-kind="image"></label></div>${v?`<img class="pv" src="${esc(v)}" alt="" onerror="this.style.display='none'">`:''}</div>`;
+  if(type==='video')return `<div class="f full">${lab}<div class="imgfield"><input type="text" data-path="${path}" value="${esc(v)}" placeholder="Paste a YouTube / Vimeo / .mp4 link, or upload a video →"><label class="btn small ghost" style="cursor:pointer">Upload video<input type="file" accept="video/mp4,video/webm,video/quicktime" hidden data-upload="${path}" data-kind="video"></label></div><div class="hint" style="margin:6px 0 0">${videoInfo(v).kind==='none'?(v?'⚠ This link is not recognised.':'Optional.'):'✓ '+(videoInfo(v).kind==='embed'?'YouTube/Vimeo link recognised.':'Video file.')} Uploads are limited to 24 MB — for longer films, use YouTube or Vimeo.</div></div>`;
+  if(type==='cat')return `<label class="f">${lab}<input list="cats" data-path="${path}" value="${esc(v)}"></label>`;
+  return `<label class="f ${opts.full?'full':''}">${lab}<input type="text" data-path="${path}" value="${esc(v)}" ${opts.list?`list="${opts.list}"`:''}></label>`;
+}
+const datalists=`<datalist id="cats"><option>Graphic Design</option><option>Marketing</option><option>Mural Art</option></datalist><datalist id="links"><option value="#/graphic-design"><option value="#/marketing"><option value="#/mural-art"><option value="#/works"><option value="#/videos"><option value="#/contact"></datalist>`;
+
+function toolbar(list,i,key){
+  const it=list[i];
+  return `<div class="btns">
+    <button class="ib" data-act="up" data-key="${key}" data-i="${i}" title="Move up" ${i===0?'disabled':''}>↑</button>
+    <button class="ib" data-act="down" data-key="${key}" data-i="${i}" title="Move down" ${i===list.length-1?'disabled':''}>↓</button>
+    <button class="ib ${it.visible===false?'on':''}" data-act="vis" data-key="${key}" data-i="${i}">${it.visible===false?'Hidden — show':'Hide'}</button>
+    <button class="ib" data-act="edit" data-key="${key}" data-i="${i}">${open===key+i?'Close':'Edit'}</button>
+    <button class="ib red" data-act="del" data-key="${key}" data-i="${i}">Delete</button></div>`;
+}
+
+/* ---------- tabs ---------- */
+const TABS=[['projects','Projects'],['videos','Videos'],['services','Services'],['site','Site text'],['menu','Menu & more'],['messages','Messages'],['media','Uploads']];
+function render(){
+  $('#tabs').innerHTML=TABS.map(([k,n])=>{
+    const c=k==='projects'?C.projects.length:k==='videos'?C.videos.length:k==='services'?C.services.length:k==='messages'&&messages?messages.length:'';
+    return `<button class="tab ${tab===k?'on':''}" data-tab="${k}">${n}${c!==''?`<i>${c}</i>`:''}</button>`}).join('');
+  $('#title').textContent=TABS.find(t=>t[0]===tab)[1];
+  $('#save').hidden=(tab==='messages'||tab==='media');
+  $('#dirty').hidden=$('#save').hidden;
+  setDirty(dirty);
+  const v=$('#view');
+  if(tab==='projects')v.innerHTML=projectsView();
+  else if(tab==='videos')v.innerHTML=videosView();
+  else if(tab==='services')v.innerHTML=servicesView();
+  else if(tab==='site')v.innerHTML=siteView();
+  else if(tab==='menu')v.innerHTML=menuView();
+  else if(tab==='messages'){v.innerHTML='<div class="empty">Loading…</div>';loadMessages()}
+  else if(tab==='media'){v.innerHTML='<div class="empty">Loading…</div>';loadMedia()}
+}
+
+function projectsView(){
+  const list=C.projects;
+  return `${datalists}<p class="lead">Your portfolio projects. Use <b>Hide</b> to take one off the website without deleting it. Order here = order on the website.</p>
+  <button class="btn" data-act="add" data-key="projects" style="margin-bottom:18px">+ Add project</button>
+  ${list.length?list.map((p,i)=>`<div class="item ${p.visible===false?'hidden-item':''}"><div class="row">${p.image?`<img class="thumb" src="${esc(p.image)}" alt="" onerror="this.style.visibility='hidden'">`:'<div class="thumb ph">No image</div>'}<div class="t"><b>${esc(p.title)||'Untitled'}${p.visible===false?'<span class="badge hide">Hidden</span>':''}</b><small>${esc(p.category)} · ${esc(p.year)}</small></div>${toolbar(list,i,'projects')}</div>
+  ${open==='projects'+i?`<div class="edit">${field(`projects.${i}.title`,'Title')}${field(`projects.${i}.category`,'Category (pick or type your own)','cat')}${field(`projects.${i}.image`,'Cover image','image',{full:true})}${field(`projects.${i}.desc`,'Short description (shown on cards)','text',{full:true})}${field(`projects.${i}.summary`,'Summary (top of project page)','text',{full:true})}${field(`projects.${i}.body`,'The story (project page)','area',{full:true})}${field(`projects.${i}.year`,'Year')}${field(`projects.${i}.type`,'Type')}${field(`projects.${i}.services`,'Services (separate with ·)','text',{full:true})}${field(`projects.${i}.videoUrl`,'Project video (optional)','video')}</div>`:''}</div>`).join(''):'<div class="empty">No projects yet. Click “Add project”.</div>'}`;
+}
+function videosView(){
+  const list=C.videos;
+  return `<p class="lead">Videos appear on the Videos page, the Works page and the home page. Paste a YouTube or Vimeo link, or upload an MP4 (up to 24 MB).</p>
+  <button class="btn" data-act="add" data-key="videos" style="margin-bottom:18px">+ Add video</button>
+  ${list.length?list.map((v,i)=>{const info=videoInfo(v.url);const th=v.poster||info.thumb;return `<div class="item ${v.visible===false?'hidden-item':''}"><div class="row">${th?`<img class="thumb" src="${esc(th)}" alt="" onerror="this.style.visibility='hidden'">`:'<div class="thumb ph">▶ Video</div>'}<div class="t"><b>${esc(v.title)||'Untitled'}${v.visible===false?'<span class="badge hide">Hidden</span>':''}</b><small>${esc(v.category)} · ${info.kind==='embed'?'YouTube/Vimeo':info.kind==='file'?'Video file':'No valid link'}</small></div>${toolbar(list,i,'videos')}</div>
+  ${open==='videos'+i?`<div class="edit">${field(`videos.${i}.title`,'Title')}${field(`videos.${i}.category`,'Label (e.g. Motion, Campaign)')}${field(`videos.${i}.url`,'Video','video')}${field(`videos.${i}.poster`,'Cover image (optional, for uploaded files)','image',{full:true})}${field(`videos.${i}.description`,'Description','area',{full:true})}</div>`:''}</div>`}).join(''):'<div class="empty">No videos yet. Click “Add video”.</div>'}`;
+}
+function servicesView(){
+  const list=C.services;
+  return `${datalists}<p class="lead">The services shown on the Services page and the home page list.</p>
+  <button class="btn" data-act="add" data-key="services" style="margin-bottom:18px">+ Add service</button>
+  ${list.length?list.map((s,i)=>`<div class="item ${s.visible===false?'hidden-item':''}"><div class="row"><div class="t"><b>${esc(s.num)} — ${esc(s.title)||'Untitled'}${s.visible===false?'<span class="badge hide">Hidden</span>':''}</b><small>${esc(s.text)}</small></div>${toolbar(list,i,'services')}</div>
+  ${open==='services'+i?`<div class="edit">${field(`services.${i}.title`,'Title')}${field(`services.${i}.num`,'Number (e.g. 04)')}${field(`services.${i}.tag`,'Small label (e.g. DESIGN)')}${field(`services.${i}.link`,'Home-page link','text',{list:'links'})}${field(`services.${i}.text`,'Description','area',{full:true})}</div>`:''}</div>`).join(''):'<div class="empty">No services yet.</div>'}`;
+}
+function siteView(){
+  return `<p class="lead">Every piece of text and the main photos on your website. Leave a field empty to hide that bit of text.</p>`+
+  window.SCHEMA.map(([g,fields])=>`<div class="group">${esc(g)}</div><div class="card"><div class="grid2">${fields.map(([k,l,t])=>field('site.'+k,l,t,{full:t==='area'||t==='image'})).join('')}</div></div>`).join('');
+}
+function menuView(){
+  const names={about:'About',services:'Services',works:'Works',graphic:'Graphic Design',marketing:'Marketing',mural:'Mural Art',videos:'Videos',contact:'Contact'};
+  return `<p class="lead">Choose which pages appear in the top menu. (Hidden pages are still reachable by direct link.)</p><div class="card">${Object.keys(names).map(k=>`<label class="chk"><input type="checkbox" data-path="nav.${k}" data-bool="1" ${C.nav[k]!==false?'checked':''}> ${names[k]}</label>`).join('')}</div>
+  <div class="group">Start over</div><div class="card"><p style="margin-top:0">Put all text, projects, videos and services back to the original sample content. Nothing changes on the website until you click <b>Save changes</b>.</p><button class="btn danger small" data-act="reset">Reset everything to the original</button></div>
+  <div class="group">Password</div><div class="card"><p style="margin:0">Your password is stored safely in Cloudflare as the secret <code>ADMIN_PASSWORD</code>. To change it: Cloudflare → your Worker → Settings → Variables and Secrets → edit it.</p></div>`;
+}
+async function loadMessages(){
+  try{messages=(await api('/api/admin/messages')).messages}catch(e){$('#view').innerHTML='<div class="msg">'+esc(e.message)+'</div>';return}
+  render2();
+  function render2(){
+    $('#tabs').querySelector('[data-tab=messages]').innerHTML='Messages<i>'+messages.length+'</i>';
+    $('#view').innerHTML=`<p class="lead">Messages sent through your website’s contact form.</p>`+(messages.length?messages.map(m=>`<div class="msgbox"><h4>${esc(m.subject||'(no subject)')}</h4><small>${esc(m.name)} · <a href="mailto:${esc(m.email)}">${esc(m.email)}</a> · ${esc(new Date(m.at).toLocaleString())}</small><p>${esc(m.message)}</p><a class="btn small" href="mailto:${esc(m.email)}?subject=${encodeURIComponent('Re: '+(m.subject||''))}">Reply</a> <button class="btn small danger" data-act="delmsg" data-id="${esc(m.id)}">Delete</button></div>`).join(''):'<div class="empty">No messages yet.</div>');
+  }
+}
+async function loadMedia(){
+  try{media=(await api('/api/admin/media')).media}catch(e){$('#view').innerHTML='<div class="msg">'+esc(e.message)+'</div>';return}
+  const used=JSON.stringify(C);
+  $('#view').innerHTML=`<p class="lead">Everything you uploaded. Delete files you no longer use to keep storage tidy. Files marked <b>in use</b> are on your website.</p>`+(media.length?`<div class="media">${media.map(m=>`<div class="mi">${/^video/.test(m.type)?`<video src="${esc(m.url)}" preload="metadata" muted></video>`:`<img src="${esc(m.url)}" alt="">`}<div>${esc(m.name||m.id)}<br>${(m.size/1048576).toFixed(1)} MB ${used.includes(m.url)?'· <b>in use</b>':''}</div><div style="margin-top:8px;display:flex;gap:6px"><button class="ib" data-act="copy" data-url="${esc(m.url)}">Copy link</button><button class="ib red" data-act="delmedia" data-id="${esc(m.id)}">Delete</button></div></div>`).join('')}</div>`:'<div class="empty">No uploads yet.</div>');
+}
+
+/* ---------- events ---------- */
+document.addEventListener('input',e=>{
+  const t=e.target;if(!t.dataset||!t.dataset.path||!C)return;
+  setPath(C,t.dataset.path,t.dataset.bool?t.checked:t.value);
+  if(!dirty)setDirty(true);
+});
+document.addEventListener('change',async e=>{
+  const t=e.target;
+  if(t.dataset&&t.dataset.upload){
+    const f=t.files[0];if(!f)return;
+    toast('Uploading '+f.name+'…');
+    try{
+      const blob=t.dataset.kind==='image'?await shrink(f):f;
+      const r=await api('/api/admin/upload',{method:'POST',headers:{'content-type':blob.type||f.type,'x-filename':f.name},body:blob});
+      setPath(C,t.dataset.upload,r.url);setDirty(true);keepScroll(render);toast('Uploaded. Remember to Save changes.');
+    }catch(err){toast(err.message,true)}
+    t.value='';
+  }
+});
+function keepScroll(fn){const y=window.scrollY;fn();window.scrollTo(0,y)}
+async function shrink(file){
+  if(!/^image\/(jpeg|png|webp)$/.test(file.type))return file;
+  try{
+    const bmp=await createImageBitmap(file);
+    const max=1800;if(bmp.width<=max&&file.size<1.5e6)return file;
+    const sc=Math.min(1,max/bmp.width);const c=document.createElement('canvas');c.width=Math.round(bmp.width*sc);c.height=Math.round(bmp.height*sc);
+    c.getContext('2d').drawImage(bmp,0,0,c.width,c.height);
+    return await new Promise(r=>c.toBlob(b=>r(b||file),'image/jpeg',.86));
+  }catch{return file}
+}
+const blank={
+  projects:()=>({id:'p'+uid(),slug:'',title:'New project',category:'Graphic Design',image:'',desc:'',summary:'',body:'',year:String(new Date().getFullYear()),type:'',services:'',videoUrl:'',visible:true}),
+  videos:()=>({id:'v'+uid(),title:'New video',category:'Motion',description:'',url:'',poster:'',visible:true}),
+  services:()=>({id:'s'+uid(),num:String(C.services.length+1).padStart(2,'0'),tag:'',title:'New service',text:'',link:'#/services',visible:true}),
+};
+document.addEventListener('click',async e=>{
+  const tb=e.target.closest('[data-tab]');
+  if(tb){tab=tb.dataset.tab;open=null;render();window.scrollTo(0,0);return}
+  const b=e.target.closest('[data-act]');if(!b||!C&&b.dataset.act!=='x')return;
+  const a=b.dataset.act,key=b.dataset.key,i=Number(b.dataset.i);
+  if(a==='add'){C[key].unshift(blank[key]());open=key+0;setDirty(true);render();window.scrollTo(0,0)}
+  else if(a==='edit'){open=open===key+i?null:key+i;keepScroll(render)}
+  else if(a==='vis'){C[key][i].visible=C[key][i].visible===false;setDirty(true);keepScroll(render)}
+  else if(a==='up'||a==='down'){const j=a==='up'?i-1:i+1;const L=C[key];if(j<0||j>=L.length)return;[L[i],L[j]]=[L[j],L[i]];if(open===key+i)open=key+j;setDirty(true);keepScroll(render)}
+  else if(a==='del'){if(!confirm('Delete “'+(C[key][i].title||'this item')+'”? This cannot be undone (use Hide if you only want to take it off the website).'))return;C[key].splice(i,1);open=null;setDirty(true);keepScroll(render)}
+  else if(a==='reset'){if(!confirm('Reset ALL content to the original sample content?'))return;C=withDefaults(null);setDirty(true);render();toast('Reset. Click Save changes to publish.')}
+  else if(a==='delmsg'){if(!confirm('Delete this message?'))return;try{await api('/api/admin/messages/'+b.dataset.id,{method:'DELETE'});loadMessages()}catch(err){toast(err.message,true)}}
+  else if(a==='delmedia'){if(!confirm('Delete this file? If it is used on your site, it will stop showing.'))return;try{await api('/api/admin/media/'+b.dataset.id,{method:'DELETE'});loadMedia()}catch(err){toast(err.message,true)}}
+  else if(a==='copy'){try{await navigator.clipboard.writeText(location.origin+b.dataset.url);toast('Link copied')}catch{toast(location.origin+b.dataset.url)}}
+});
+
+$('#save').onclick=async()=>{
+  const b=$('#save');b.disabled=true;b.textContent='Saving…';
+  try{
+    const seen=new Set();
+    C.projects.forEach(p=>{let s=(!p.slug||/^new-project/.test(p.slug)?slugify(p.title):p.slug);let base=s,n=2;while(seen.has(s))s=base+'-'+n++;seen.add(s);p.slug=s});
+    await api('/api/admin/content',{method:'PUT',headers:{'content-type':'application/json'},body:JSON.stringify(C)});
+    setDirty(false);toast('Saved — your website is updated.');
+  }catch(err){toast(err.message,true)}
+  b.disabled=false;b.textContent='Save changes';
+};
+
+start().catch(()=>{$('#login').hidden=false;$('#loginMsg').innerHTML='<div class="msg">Could not reach the server. If you opened this file from your computer, use your live website address instead.</div>'});
+})();
+</script>
+</body>
+</html>
