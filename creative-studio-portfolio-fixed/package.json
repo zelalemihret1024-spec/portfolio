@@ -1,8 +1,9 @@
 {
   "name": "zelalem-m",
   "private": true,
+  "type": "module",
   "scripts": {
     "deploy": "wrangler deploy",
-    "preview": "wrangler dev"
+    "dev": "wrangler dev"
   }
 }
