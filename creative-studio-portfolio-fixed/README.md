@@ -3,6 +3,7 @@
 - `public/`       the website (index.html) and the admin page (admin.html) — each is one self-contained file
 - `worker.js`     the small server: login, saving content, uploads, contact messages
 - `wrangler.toml` Cloudflare settings (includes the storage the admin needs)
+- `src/` + `build.py`  editable sources; run `python3 build.py` to regenerate `public/` (only needed if you edit the code)
 - `react-app/`    old optional React/Supabase version — not used, ignore it
 
 ## Setup (one time)
@@ -32,4 +33,5 @@ Menu & more: choose which pages show in the menu.
 Messages: enquiries from the contact form. Uploads: manage your files.
 Always click **Save changes** — the website updates immediately.
 
-Videos: paste a YouTube/Vimeo link (best for long films) or upload an MP4 (max 24 MB).
+Videos: paste a YouTube/Vimeo link (best for long films) or upload an MP4 (max 24 MB). They show inside the Work page (filter: Video) and on the home page; clicking one opens a player.
+When you are signed in to /admin, an Admin button and bar appear on your public site. Visitors never see them.
