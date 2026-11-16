@@ -5,8 +5,9 @@ compatibility_date = "2025-01-01"
 [assets]
 directory = "./public"
 binding = "ASSETS"
-# These paths go to worker.js first; everything else is served as a static file.
-run_worker_first = ["/api/*", "/media/*"]
+# The worker runs first for every request; it handles /api/* and /media/*
+# and passes everything else on to the static files (see worker.js).
+run_worker_first = true
 
 # Storage for your content, uploads and messages.
 # Wrangler creates this KV namespace automatically on the first deploy.
