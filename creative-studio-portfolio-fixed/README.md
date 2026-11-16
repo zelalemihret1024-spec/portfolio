@@ -1,26 +1,34 @@
-# Zelalem.M — Creative Studio Website
+# Zelalem.M — Website + Admin
 
-Static site, no build step. The deployable folder is `public/`.
+- `public/`       the website (index.html, app.js, shared.js) and the admin page (admin.html)
+- `worker.js`     the small server: login, saving content, uploads, contact messages
+- `wrangler.toml` Cloudflare settings (includes the storage the admin needs)
+- `react-app/`    old optional React/Supabase version — not used, ignore it
 
-## Deploy to Cloudflare Pages (easiest, no tools)
-1. Go to dash.cloudflare.com → Workers & Pages → Create → Pages → **Upload assets**.
-2. Name the project `zelalem-m`, drag in the **contents of the `public/` folder** (or the zip), click Deploy.
-3. Your site is live at `https://zelalem-m.pages.dev`.
+## Setup (one time)
 
-## Deploy with Git (auto-deploys)
-Push this folder to GitHub → Cloudflare Pages → Connect to Git →
-Framework preset: **None**, Build command: *(empty)*, Output directory: `public`.
+1. Put ALL these files in your GitHub repo (replace what is there) so `wrangler.toml` and `worker.js` are at the top level.
+2. Cloudflare → your Worker `portfolio` → Settings → Build:
+   - Build command: leave empty
+   - Deploy command: `npx wrangler deploy`
+3. After the deploy finishes, set your password:
+   Worker → Settings → Variables and Secrets → Add → Type **Secret**,
+   Name `ADMIN_PASSWORD`, Value = your password (long, not used anywhere else) → Deploy.
+4. Open `https://YOUR-SITE/admin` and sign in.
 
-## Deploy with Wrangler CLI
+If the first deploy complains about the `CONTENT` KV namespace:
+Cloudflare → Storage & Databases → KV → Create namespace `zelalem-content`, copy its ID, and in `wrangler.toml` change
 ```
-npx wrangler deploy
+[[kv_namespaces]]
+binding = "CONTENT"
+id = "PASTE-THE-ID-HERE"
 ```
-(uses `wrangler.toml`, serving `./public`)
 
-## Optional: React + Supabase version (admin dashboard)
-`react-app/` holds the original React source with admin login/uploads. To use it:
-```
-cd react-app && npm install && npm run build
-```
-Cloudflare Pages: Root directory `react-app`, Build command `npm run build`, Output `dist`.
-Set `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_ADMIN_EMAIL` (see `.env.example`) and run `supabase/schema.sql`.
+## Using the admin
+Projects, Videos, Services: add, edit, hide/show, reorder (↑ ↓), delete.
+Site text: every heading, paragraph, photo, email and phone.
+Menu & more: choose which pages show in the menu.
+Messages: enquiries from the contact form. Uploads: manage your files.
+Always click **Save changes** — the website updates immediately.
+
+Videos: paste a YouTube/Vimeo link (best for long films) or upload an MP4 (max 24 MB).
