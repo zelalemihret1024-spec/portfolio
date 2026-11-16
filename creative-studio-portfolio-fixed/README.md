@@ -1,26 +1,26 @@
-# FORM & FIRE — Creative Studio Portfolio
+# Zelalem.M — Creative Studio Website
 
-## Open the website
-This package now includes a standalone website. **No Node.js, npm, server, or installation is required to preview it.**
+Static site, no build step. The deployable folder is `public/`.
 
-1. Extract the ZIP file.
-2. Open the `creative-studio-portfolio-fixed` folder.
-3. Double-click **`index.html`** (or **`START-WEBSITE.bat`**).
-4. The website opens in your default browser. Use the top navigation to visit Home, About, Services, Works, Graphic Design, Marketing, Mural Art, Videos and Contact.
+## Deploy to Cloudflare Pages (easiest, no tools)
+1. Go to dash.cloudflare.com → Workers & Pages → Create → Pages → **Upload assets**.
+2. Name the project `zelalem-m`, drag in the **contents of the `public/` folder** (or the zip), click Deploy.
+3. Your site is live at `https://zelalem-m.pages.dev`.
 
-If Windows asks which app to use, choose Chrome or Microsoft Edge.
+## Deploy with Git (auto-deploys)
+Push this folder to GitHub → Cloudflare Pages → Connect to Git →
+Framework preset: **None**, Build command: *(empty)*, Output directory: `public`.
 
-## Included
-- Black, cream and orange visual identity.
-- Responsive multi-page-style navigation that works directly from the local file.
-- Home, About, Services, Works, Graphic Design, Marketing, Mural Art, Videos and Contact views.
-- Sample portfolio imagery and project content to demonstrate the layout.
-- Contact form opens the visitor's email application to send an enquiry.
+## Deploy with Wrangler CLI
+```
+npx wrangler deploy
+```
+(uses `wrangler.toml`, serving `./public`)
 
-## Admin and publishing note
-The standalone `index.html` is a front-end preview and opens directly. Secure administrator login, database-backed content editing, media uploads and saved contact messages require a connected Supabase project and a hosted deployment. The `/admin` view explains this requirement. Do not treat the demo admin view as secure authentication.
-
-The original React/Vite source files are retained in `src/` for future development, but they are **not needed** to open the standalone `index.html` preview.
-
-## Before publishing
-Replace the demo projects, images, email address (`hello@example.com`), and studio details with your real content. Use only images and videos you own or have permission to publish.
+## Optional: React + Supabase version (admin dashboard)
+`react-app/` holds the original React source with admin login/uploads. To use it:
+```
+cd react-app && npm install && npm run build
+```
+Cloudflare Pages: Root directory `react-app`, Build command `npm run build`, Output `dist`.
+Set `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_ADMIN_EMAIL` (see `.env.example`) and run `supabase/schema.sql`.
